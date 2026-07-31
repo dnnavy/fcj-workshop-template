@@ -1,57 +1,22 @@
 ---
 title: "Week 4 Worklog"
-date: 2024-01-01
+date: 2026-06-28
 weight: 1
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
 
 ### Week 4 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Explored FinOps related tools.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
+| 1   | - Explore Amazon Q.      | 22/06/2026 | 24/06/2026      |https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/amazonq.html?nc2=type_a_top_search https://aws.amazon.com/q/?nc2=type_a_top_search  https://aws.amazon.com/blogs/aws-cloud-financial-management/transforming-finops-with-the-latest-amazon-q-cost-capabilities/?nc2=type_a_top_search https://pages.awscloud.com/Analytics-in-15-Get-Answers-From-Data-in-Seconds-with-Amazon-QuickSight-Q_2023_SN-0517-ABD_OD?did=ep_card-reg&amp;did=ep_card&trk=ep_card-ep_card-reg-79066db5-647b-4cec-a088-454c493cbb70&amp;sc_channel=el https://aws.amazon.com/q/business/getting-started/ https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/chat-artifacts.html https://aws.amazon.com/blogs/devops/mastering-amazon-q-developer-with-rules/|
+| 2   | - Explore Amazon Quick Sight. <br> - **Practice:**     | 24/06/2026 | 27/06/2026      |https://docs.aws.amazon.com/quicksight/latest/APIReference/Welcome.html https://aws.amazon.com/quick/quicksight/features/data-preparation/ https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisteredUserDashboardFeatureConfigurations.html https://aws.amazon.com/blogs/machine-learning/create-rich-custom-tooltips-in-amazon-quick-sight/ https://aws.amazon.com/quick/quicksight/ https://docs.aws.amazon.com/quicksight/latest/developerguide/embedded-analytics-getting-started.html https://docs.aws.amazon.com/quicksight/latest/developerguide/resource-errors.html https://aws.amazon.com/documentation-overview/quicksight/ https://aws.amazon.com/quick/quicksight/features/pixel-perfect-reports/ https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateDataSource.html https://aws.amazon.com/quicksuite/quicksight/embedded-analytics/|
+| 3   | - Test backend. | 27/06/2026 | 29/06/2026      ||
 ### Week 4 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Learned about FinOps-related tools: Amazon Q and Amazon Quick Sight.
+* Complete backend testing, note areas for further improvement and adjustment.

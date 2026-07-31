@@ -1,126 +1,139 @@
 ---
 title: "Event 1"
-date: 2024-01-01
+date: 2026-07-31
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
+# Report on "AWS Quiz Battle - First Cloud AI Journey Kick-off"
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+### Event Information
 
-### Event Objectives
+&emsp;**Event name:** AWS Quiz Battle - First Cloud AI Journey kick-off session
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+&emsp;**Date:** June 20, 2026
 
-### Speakers
+&emsp;**Venue:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+&emsp;**Organiser:** Amazon Web Services Viet Nam Company Limited - First Cloud AI Journey program
 
-### Key Highlights
+&emsp;**Role in the event:** Attendee, following the competition as a member of the audience
 
-#### Identifying the drawbacks of legacy application architecture
+&emsp;**Event format:** Team competition, four to five members per team
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+### Purpose Of The Event
 
-#### Transitioning to modern application architecture – Microservices
+- Create a sense of connection between the members at the first gathering of the program
+- Let the attendees see the baseline AWS knowledge the program expects
+- Introduce the kind of scenario questions a business actually faces, rather than stopping at pure theory
+- Shape the self-study roadmap for the next phase based on the gaps that surfaced
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+### Format And Rules
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+The competing teams were formed randomly, with four to five people each. Because the split was random, most members of a team had never met before, which forced each team to assign roles in a very short time.
 
-#### Domain-Driven Design (DDD)
+The competition ran over several rounds of increasing difficulty:
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+| Round | Content | Scoring |
+|---|---|---|
+| **Round 1 - Warm-up** | Rapid multiple-choice questions on cloud computing and AWS fundamentals | A correct and fast answer scores higher |
+| **Round 2 - Service knowledge** | Questions on the characteristics, limits and pricing of the core services | Fixed points per correct answer |
+| **Round 3 - Business scenarios** | Given a real business requirement, the team proposes a suitable AWS service and explains the reasoning | Scored on the soundness of the design and the argument |
+| **Round 4 - Final stretch** | Open questions where the team picks the point value matching the difficulty | A wrong answer loses points |
 
-#### Event-Driven Architecture
+After every question the judging panel, made up of AWS mentors and engineers, explained the answer and analysed why an option that looked correct did not fit the specific context. For someone attending as part of the audience, this was the most valuable part of the event, because I could follow the full line of reasoning without the time pressure the competing teams were under.
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+### Content Of The Question Set
 
-#### Compute Evolution
+#### Group 1 - Fundamentals
 
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
+- Distinguishing the three service models IaaS, PaaS and SaaS
+- Distinguishing Region, Availability Zone and Edge Location
+- The Shared Responsibility Model between AWS and the customer
+- The main service groups and the flagship service of each group
 
-#### Amazon Q Developer
+#### Group 2 - Core services
 
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+- Amazon EC2: the instance families, the four pricing models and the workload that fits each one
+- Amazon S3: the storage classes, the durability guarantee and the lifecycle mechanism
+- Amazon VPC: public and private subnets, the role of the Internet Gateway and the NAT Gateway
+- AWS IAM: user, group, role and the policy evaluation order
+- Amazon RDS: the difference between Multi-AZ and a read replica
 
-### Key Takeaways
+#### Group 3 - Real business scenarios
 
-#### Design Mindset
+This was the hardest group and the part that caused the most debate between the teams. Each question presented a business problem with a constraint on cost, time or security, and asked the team to propose a design on AWS.
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
+Below are some of the scenarios I noted down while following the competition:
 
-#### Technical Architecture
+| Business requirement | What the teams proposed | The judging panel's explanation |
+|---|---|---|
+| An e-commerce platform sees a traffic spike during promotion hours and very low traffic the rest of the time. The cost of idle servers is too high | Use an Auto Scaling group with an Application Load Balancer and a scaling policy driven by CPU utilisation | A sound answer. The panel added that scheduled scaling would fit better because the promotion window is known in advance, so it reacts sooner than waiting for CPU to rise before scaling out |
+| A company must keep accounting records for seven years by regulation, will almost never read them again, and wants the lowest possible cost | Store the data in Amazon S3 and use a lifecycle rule to move it to S3 Glacier Deep Archive | The right direction. The panel noted that the retrieval time of Deep Archive can be several hours, which has to be agreed with the business side beforehand |
+| An internal application running inside a VPC needs to read and write on S3, but the security team does not allow the traffic to leave to the internet | One team proposed a NAT Gateway | Not accepted. The suitable answer is an S3 Gateway VPC Endpoint, which keeps the traffic off the internet and avoids the hourly charge of a NAT Gateway |
+| The system must keep running when an entire Availability Zone is lost, with a very short tolerated downtime | Deploy the application tier across several Availability Zones with an Auto Scaling group and enable Multi-AZ on the database | A complete answer. The panel followed up on the difference between Multi-AZ and a read replica to clarify the purpose of each mechanism |
+| An employee leaves the company, all access must be revoked immediately and the same risk must not happen again | Disable the IAM user and delete the access keys | Correct but incomplete. The panel steered the discussion towards IAM roles and centralised sign-in instead of long-lived access keys, so that revocation is immediate and auditable |
 
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
+#### Group 4 - Cost and optimisation
 
-#### Modernization Strategy
+- Estimating the cost of a simple architecture from the price list
+- Spotting the components that are often forgotten but keep charging, such as a NAT Gateway, an unused Elastic IP or an orphaned EBS volume
+- The role of cost allocation tags in attributing the cost to the right team
 
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+### Observations From The Audience
 
-### Applying to Work
+In the first two rounds most teams did fairly well, since those were concepts that can be memorised from the documentation.
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
+The real separation only appeared in the business scenario round. Many questions had no single correct answer and depended on the specific constraints in the prompt. Some proposals worked perfectly well from a technical point of view yet still scored low because the cost was unreasonable or a security requirement stated in the prompt was violated. Watching from the audience, I noticed the teams' mistakes came mostly not from a lack of knowledge but from skimming over the constraints.
 
-### Event Experience
+Another thing I observed was how the teams handled disagreement. The ones that settled on an answer quickly were usually the ones that went back to the requirement in the prompt, instead of arguing in general terms about which service is better.
 
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+Because I was not competing, I had the chance to write down both the questions and the panel's analysis in full. Those notes turned into a useful reference for the self-study phase that followed.
 
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
+### What I Learned
 
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
+#### On knowledge
 
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
+- I got a clear picture of the baseline knowledge the program expects from an intern, and therefore of where I stood
+- I realised the gap between knowing that a service exists and knowing when it should be used
+- I understood that several AWS services look interchangeable but differ sharply in cost and security model, the clearest case being a NAT Gateway compared with a VPC Endpoint
 
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
+#### On solving a business problem
 
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
+- A technically correct design is not necessarily a good one. Cost, operational complexity and compliance requirements all have to be weighed at the same time
+- The constraints in the prompt must be read carefully before thinking about a solution. Most of the low-scoring answers during the competition came from missing a condition that had been stated explicitly
+- The reasoning behind a choice always has to be explainable, because in real work the argument matters as much as the result
 
-#### Some event photos
-*Add your event photos here*  
+#### On the value of observing
 
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+- Watching other people solve a problem under time pressure exposes the common reasoning mistakes clearly, the kind that are hard to notice when studying alone
+- The panel's explanation after each question was worth more than the answer itself, because it showed how an experienced engineer analyses the constraints before picking a service
+
+### Applying It To The Internship
+
+The topics that came up most often during the competition became the study priorities for the following weeks:
+
+- Permissions and the principle of least privilege were studied right in week 4 together with cost control
+- The S3 storage classes and lifecycle rules were practised in depth in week 5
+- Networking, and in particular the difference between a NAT Gateway and a VPC Endpoint, was clarified in week 6
+- The habit of reading the constraints carefully and estimating the cost before deploying anything was kept for every later lab
+
+### Photos From The Event
+
+<!--
+HOW TO INSERT IMAGES:
+1. Put the image files in: static/images/4-EventParticipated/4.1-Event1/
+2. Uncomment the lines below and correct the file names.
+3. Use file names without accents or spaces. For example: overview.png, judges.png
+-->
+
+<!-- ![Overview of the competition on the 26th floor of Bitexco Tower](/images/4-EventParticipated/4.1-Event1/toan-canh.png) -->
+
+<!-- ![The teams during the business scenario round](/images/4-EventParticipated/4.1-Event1/vong-tinh-huong.png) -->
+
+<!-- ![The judging panel explaining the answer after each question](/images/4-EventParticipated/4.1-Event1/giai-thich-dap-an.png) -->
+
+![Photo taken at the event](/fcj-workshop-template/static/images/4.1-Event1/event.jpg)
+
+> Looking back, this was an effective way to open the program. Even though I only attended as a member of the audience, I took away more than I had expected. The greatest value was not learning a few more services, but the first exposure to AWS from the point of view of a real business problem with real constraints, rather than a list of services to memorise.

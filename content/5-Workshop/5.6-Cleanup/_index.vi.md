@@ -1,37 +1,39 @@
 ---
-title : "Dọn dẹp tài nguyên"
-date : 2024-01-01
-weight : 6
-chapter : false
+title: "Dọn dẹp"
+date: 2024-01-01
+weight: 6
+chapter: false
 pre : " <b> 5.6. </b> "
 ---
 
-#### Dọn dẹp tài nguyên
+### 1. Xóa Frontend Hosting (AWS Amplify)
 
-Xin chúc mừng bạn đã hoàn thành xong lab này!
-Trong lab này, bạn đã học về các mô hình kiến trúc để truy cập Amazon S3 mà không sử dụng Public Internet.
+Nên xoá giao diện trước. 
+1. Mở AWS Console -> tìm dịch vụ **AWS Amplify**.
+2. Chọn ứng dụng BK-Sync mà ta đã tạo.
+3. Ở menu bên cạnh, bấm vào **App settings** -> **General settings**.
+4. Kéo xuống dưới cùng và bấm **Delete app** để xóa.
+![alt text](image.png)
 
-+ Bằng cách tạo Gateway endpoint, bạn đã cho phép giao tiếp trực tiếp giữa các tài nguyên EC2 và Amazon S3, mà không đi qua Internet Gateway.
-Bằng cách tạo Interface endpoint, bạn đã mở rộng kết nối S3 đến các tài nguyên chạy trên trung tâm dữ liệu trên chỗ của bạn thông qua AWS Site-to-Site VPN hoặc Direct Connect.
+### 2. Xóa hạ tầng Backend (AWS SAM)
 
-#### Dọn dẹp
-1. Điều hướng đến Hosted Zones trên phía trái của bảng điều khiển Route 53. Nhấp vào tên của  s3.us-east-1.amazonaws.com zone. Nhấp vào Delete và xác nhận việc xóa bằng cách nhập từ khóa "delete".
+Để tránh bị AWS tính phí, bạn bắt buộc phải gỡ bỏ toàn bộ Lambda, API Gateway, DynamoDB... đã tạo ra.
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/delete-zone.png)
+**Cách 1: Xóa bằng lệnh (Khuyên dùng)**
+Mở Terminal (đang đứng trong thư mục `backend`) và chạy lệnh:
+```bash
+sam delete
+```
+Xác nhận bằng phím `y` cho các câu hỏi. CloudFormation sẽ tự động dò tìm và gỡ bỏ toàn bộ.
 
-2. Disassociate Route 53 Resolver Rule - myS3Rule from "VPC Onprem" and Delete it. 
+**Cách 2: Xóa bằng giao diện Web (Đề phòng lỗi)**
+Đôi khi việc xóa bằng lệnh bị lỗi (do AWS Secrets Manager khóa Secret bảo vệ 30 ngày). Nếu bạn gặp dòng chữ báo `DELETE_FAILED` đối với resource `HmacSecretV2`, hãy làm như sau:
+1. Mở AWS Console -> tìm dịch vụ **CloudFormation**.
+![alt text](image-1.png)
+2. Bấm vào stack `qr-attendance-backend-dev`, chọn **Delete**(hoặc **Retry delete** nếu trước đó delete thất bại).
+![alt text](image-2.png)
+3. Một bảng thông báo hiện ra , chọn **Force delete this entire stack**, nhấn **Delete stack**.
+![alt text](image-3.png)
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/vpc.png)
+Vậy là hệ thống đã được dọn dẹp sạch sẽ!
 
-4.Mở console của CloudFormation và xóa hai stack CloudFormation mà bạn đã tạo cho bài thực hành này:
-+ PLOnpremSetup
-+ PLCloudSetup
-
-![delete stack](/images/5-Workshop/5.6-Cleanup/delete-stack.png)
-
-5. Xóa các S3 bucket
-
-+ Mở bảng điều khiển S3
-+ Chọn bucket chúng ta đã tạo cho lab, nhấp chuột và xác nhận là empty. Nhấp Delete và xác nhận delete.
-+ 
-![delete s3](/images/5-Workshop/5.6-Cleanup/delete-s3.png)

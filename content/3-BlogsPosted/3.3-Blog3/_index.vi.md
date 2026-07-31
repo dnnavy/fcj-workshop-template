@@ -5,27 +5,45 @@ weight: 1
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# AWS SAM là gì? Tại sao AWS SAM không được xem là một dịch vụ Serverless của AWS?
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+* Sau khi tìm hiểu các dịch vụ cốt lõi của AWS Serverless như Lambda, API Gateway và DynamoDB, mình bắt đầu làm theo các hướng dẫn triển khai ứng dụng trên tài liệu chính thức của AWS. Điều khiến mình bất ngờ là hầu hết các ví dụ đều sử dụng "AWS Serverless Application Model (AWS SAM)". Tuy nhiên, khi quay lại trang giới thiệu AWS Serverless, mình lại không thấy AWS SAM được liệt kê cùng các dịch vụ như Lambda hay EventBridge.
+* Điều này khiến mình đặt ra một câu hỏi: "Nếu AWS SAM được sử dụng phổ biến như vậy, tại sao không được xem là một dịch vụ Serverless?"
+* Sau khi đọc tài liệu chính thức và sử dụng AWS SAM trong suốt quá trình phát triển workshop, mình nhận ra rằng AWS SAM "không phải dịch vụ thực thi ứng dụng" mà là một "công cụ phát triển" giúp mô tả và triển khai toàn bộ hạ tầng Serverless dưới dạng mã nguồn.
+---
+Infrastructure as Code - Tư duy mới trong quản lý hạ tầng
 
-Các điểm chính cần nắm:
-
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
-
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
-
-...Hình ảnh...
-
-...Link...
-
-...Hướng dẫn...
+* Trước đây, mình nghĩ việc triển khai một ứng dụng lên AWS chủ yếu được thực hiện thông qua giao diện web (GUI) của AWS Management Console. Chẳng hạn, để tạo một Lambda Function, mình có thể đăng nhập vào AWS Console, nhấn "Create Function", sau đó tiếp tục tạo API Gateway, DynamoDB, IAM Role và kết nối các dịch vụ với nhau.
+* Cách làm này khá trực quan đối với những ứng dụng nhỏ. Tuy nhiên, khi số lượng tài nguyên tăng lên, việc quản lý bằng GUI trở nên khó khăn và dễ xảy ra sai sót. Chỉ cần quên một cấu hình hoặc tạo sai quyền truy cập cũng có thể khiến toàn bộ hệ thống hoạt động không như mong muốn.
+* Đó là lý do AWS khuyến khích sử dụng "Infrastructure as Code (IaC)" - phương pháp mô tả toàn bộ hạ tầng bằng mã nguồn thay vì thao tác thủ công. Khi đó, hạ tầng có thể được lưu trữ trong Git, theo dõi lịch sử thay đổi và triển khai lại nhiều lần với kết quả giống nhau.
+---
+AWS SAM là gì?
+* Theo tài liệu chính thức của AWS, "AWS Serverless Application Model (AWS SAM)" là một framework mã nguồn mở được xây dựng dựa trên AWS CloudFormation nhằm đơn giản hóa việc phát triển và triển khai các ứng dụng Serverless.
+* Nói cách khác, AWS SAM không thay thế Lambda hay API Gateway. Thay vào đó, AWS SAM giúp người phát triển mô tả các tài nguyên này bằng một tệp cấu hình duy nhất, thường là "template.yaml".
+* Ví dụ, thay vì phải tạo từng Lambda Function, API Gateway và DynamoDB Table bằng giao diện web, người phát triển chỉ cần định nghĩa các tài nguyên trong "template.yaml". Sau đó, AWS SAM sẽ tự động chuyển đổi bản mô tả này thành các tài nguyên tương ứng trên AWS thông qua CloudFormation.
+* Đây là điểm khiến mình thay đổi cách nhìn về việc triển khai hệ thống. Trước đây, mình nghĩ mã nguồn ứng dụng là phần quan trọng nhất. Tuy nhiên, sau khi sử dụng AWS SAM, mình nhận ra "hạ tầng cũng nên được quản lý như mã nguồn".
+--- 
+Trong quá trình xây dựng workshop, mình thường xuyên sử dụng bốn lệnh cơ bản của AWS SAM:
+* sam init: giúp tạo cấu trúc ban đầu của dự án Serverless.
+* sam build: biên dịch và chuẩn bị ứng dụng để triển khai.
+sam local: cho phép chạy Lambda ngay trên máy tính thông qua Docker. Đây là lệnh mà mình thích nhất vì giúp mình kiểm tra chức năng mà không cần triển khai lên AWS sau mỗi lần chỉnh sửa.
+sam deploy: đọc tệp "template.yaml", tạo CloudFormation Stack và triển khai toàn bộ tài nguyên lên AWS. Nếu trước đây mình phải tạo từng dịch
+--- 
+Vai trò của "template.yaml"
+* Ban đầu, mình chỉ xem "template.yaml" như một tệp cấu hình. Tuy nhiên, khi số lượng Lambda và tài nguyên ngày càng nhiều, mình nhận ra đây chính là tài liệu phản ánh chính xác nhất kiến trúc của hệ thống. Chỉ cần đọc "template.yaml, mình có thể biết hệ thống gồm những dịch vụ nào, cách chúng liên kết với nhau và các quyền truy cập đã được cấu hình ra sao.
+* Có thể nói, "template.yaml" chính là "bản thiết kế" của toàn bộ hệ thống Serverless.
+--- 
+Vì sao AWS SAM không được xem là dịch vụ Serverless?
+* Đây là câu hỏi khiến mình băn khoăn nhiều nhất khi mới học. Sau khi tìm hiểu kỹ tài liệu AWS, mình nhận ra điểm khác biệt nằm ở vai trò của AWS SAM.
+* Các dịch vụ như Lambda, DynamoDB hay API Gateway đều trực tiếp tham gia vào quá trình vận hành ứng dụng, tất cả đều là những dịch vụ hoạt động liên tục khi ứng dụng đang chạy.
+* Ngược lại, AWS SAM không tham gia vào quá trình thực thi ứng dụng. AWS SAM không lưu trữ dữ liệu, không xử lý yêu cầu HTTP và cũng không chạy business logic. Sau khi lệnh "sam deploy" hoàn thành, AWS SAM gần như "rút lui", ứng dụng được vận hành hoàn toàn bởi các dịch vụ của AWS Serverless.
+* Chính vì vậy, AWS SAM được xem là "công cụ phát triển (development framework)" chứ không phải một "dịch vụ Serverless".
+--- 
+Tài liệu tham khảo:
+1. AWS. "What is the AWS Serverless Application Model (AWS SAM)?". (https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html)
+2. "Serverless on AWS". (https://aws.amazon.com/vi/serverless/)
+3. "What is AWS Well-Architected Tool?". (https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html)
+--- 
+Link bài blog:
+https://web.facebook.com/groups/awsstudygroupfcj/permalink/2227753051322988/?rdid=4BxzLitflB0OFY8E#

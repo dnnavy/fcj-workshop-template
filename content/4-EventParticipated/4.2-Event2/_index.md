@@ -1,126 +1,189 @@
 ---
 title: "Event 2"
-date: 2024-01-01
-weight: 1
+date: 2026-07-31
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
+# Report on "AWS Quiz Battle Grand Final"
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+### Event Information
 
-### Event Objectives
+&emsp;**Event name:** AWS Quiz Battle Grand Final
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+&emsp;**Date:** July 11, 2026
 
-### Speakers
+&emsp;**Venue:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+&emsp;**Organiser:** Amazon Web Services Viet Nam Company Limited - First Cloud AI Journey program
 
-### Key Highlights
+&emsp;**Role in the event:** Attendee
 
-#### Identifying the drawbacks of legacy application architecture
+&emsp;**Format:** A grand final built around three in-depth topics presented in turn
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+### Background
 
-#### Transitioning to modern application architecture – Microservices
+This was the final round of AWS Quiz Battle, the competition that started on June 20, 2026, which I followed as a member of the audience and wrote up in [Event 1](../4.1-event1/).
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+Unlike the opening round, which mainly tested fundamental knowledge through rapid questions, the grand final moved to in-depth topic presentations. The three topics chosen went into the areas that someone new to AWS usually skips: service level commitments and monitoring, securing web applications with an agent, and the actual structure of the foundational certification exam.
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+### Programme Structure
 
-#### Domain-Driven Design (DDD)
+| Topic | Title | Focus |
+|---|---|---|
+| **Topic 1** | SLA and Monitoring - From SLA to Monitoring What Really Matters | Going from a service commitment to monitoring the things that actually matter |
+| **Topic 2** | Securing Your Web Apps With AWS Security Agent | Automating security testing across the whole development lifecycle |
+| **Topic 3** | Inside The Exam - AWS Cloud Practitioner | The structure and domain weighting of the exam |
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+## Topic 1 - SLA and Monitoring: From SLA to Monitoring What Really Matters
 
-#### Event-Driven Architecture
+### What an SLA is and why it is needed
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+An **SLA (Service Level Agreement)** is a formal commitment on the expected level of service between a provider and a customer. It delivers four things:
 
-#### Compute Evolution
+- It sets clear expectations between the two parties
+- It establishes accountability when an incident occurs
+- It provides the basis for measuring performance
+- It serves risk management
 
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
+### Monitoring sits inside risk management
 
-#### Amazon Q Developer
+The point the speaker stressed is that monitoring is not a standalone activity but part of risk management. Its purpose is to detect a risk early, before it affects the SLA. The cycle has four steps:
 
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+| Step | Content |
+|---|---|
+| **Identify the risk** | Determine what could cause the system to breach the SLA |
+| **Monitor the signals** | Collect metrics and logs, and set up alarms |
+| **Respond** | Trigger notifications through Amazon SNS, run the predefined incident procedure, restore the system |
+| **Improve** | Review the incident afterwards and tune things to prevent a recurrence |
 
-### Key Takeaways
+### The Monitoring Pyramid
 
-#### Design Mindset
+This was the most valuable part of the topic. The model stacks the layers to be monitored from the top down:
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
+| Layer | What is monitored |
+|---|---|
+| **Customer Experience** (top) | The actual experience of the end user |
+| **Business** | Successful login rate, number of orders, revenue |
+| **Application** | Latency, error rate, request count |
+| **Infrastructure** | CPU, memory, disk, network |
+| **Cloud Provider** (bottom) | The status of the EC2, RDS, ALB and S3 services |
 
-#### Technical Architecture
+What is worth noticing is that this order runs opposite to how a beginner usually approaches it. Beginners tend to start at the bottom of the pyramid, watching CPU and memory, because those are the easiest metrics to obtain. Meanwhile the most important layer sits at the top and is the hardest to measure.
 
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
+### Conclusions from the topic
 
-#### Modernization Strategy
+- **Healthy infrastructure does not mean happy users.** A good infrastructure design does not guarantee a good user experience. A health check can still pass while the user experience is already broken. Infrastructure metrics alone cannot describe the true state of a system.
+- **An SLA has to be understood in the context of shared responsibility.** AWS is responsible for the cloud infrastructure, while responsibility for the user experience belongs to whoever builds the system on top of it.
+- **You have to understand what the user does and what the user needs**, not only know your own system.
 
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+## Topic 2 - Securing Your Web Apps With AWS Security Agent
 
-### Applying to Work
+### The bottleneck in traditional security testing
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
+The speaker opened with three problems in the manual approach to penetration testing:
 
-### Event Experience
+- A manual pentest engagement usually takes several weeks
+- Hiring a third-party pentest specialist is expensive, in the range of five thousand to twenty thousand US dollars
+- The result depends heavily on the individual skill of the pentester
 
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+These three problems push security testing to the end of the development cycle, or cause it to be skipped entirely on smaller projects.
 
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
+### The Frontier Agent and how it differs from a chatbot
 
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
+The product presented is a security agent powered by **Amazon Bedrock**, able to plan and execute complex security tasks on its own without a human stepping in at each stage.
 
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
+The core difference from an ordinary chatbot built on a language model is that this agent **verifies a vulnerability by carrying out a real exploit**, instead of merely predicting which vulnerabilities might exist. It has three main capabilities:
 
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
+| Capability | How it works |
+|---|---|
+| **Design review** | Analyses the architecture documents before any code is written, checking against PCI DSS, NIST CSF and AWS Well-Architected to make sure the design satisfies the security requirements |
+| **Code review** | Automatically scans pull requests for security vulnerabilities and for private information leaked into the code, such as passwords or API keys |
+| **Active penetration testing** | Attacks the application automatically, acting as a real user, performing multi-step attack chains and then producing an attack diagram together with detailed, verifiable evidence |
 
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
+Together these three capabilities cover the full development lifecycle: design review, code security and active penetration testing.
 
-#### Some event photos
-*Add your event photos here*  
+### Integration into the workflow
 
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+The agent can be integrated directly into pull requests on GitHub or GitLab, leaving comments on individual lines of code and proposing valid source code patches as automatic pull requests.
+
+This is what I found notable from a product design point of view: instead of producing a separate security report that a developer has to go and read, the findings are delivered straight into the place where the developer is already working.
+
+### Limitations worth noting
+
+I found this part no less valuable than the feature walkthrough, because the speaker was explicit that the agent is not a complete replacement:
+
+- Authentication mechanisms such as MFA, biometrics or mTLS interrupt the agent's ability to operate automatically
+- The agent struggles to detect fraud flaws that live in the business logic when it lacks deep enough business context
+- The more complex the application, the more execution time it consumes, so tracking the agent's runtime is mandatory
+
+## Topic 3 - Inside The Exam: AWS Cloud Practitioner
+
+### Where the certification sits
+
+**AWS Certified Cloud Practitioner** is a foundational certification focused on the way of thinking and on the overall picture of the AWS Cloud. The exam does not require programming skills or deep configuration ability, which makes it a suitable first step for someone new to the platform.
+
+### The four knowledge domains
+
+| Domain | Weighting |
+|---|---|
+| Domain 1 - Cloud Concepts | 24% |
+| Domain 2 - Security and Compliance | 30% |
+| Domain 3 - Cloud Technology and Services | 34% |
+| Domain 4 - Billing, Pricing, and Support | 12% |
+
+What stands out in this weighting is that **Security and Compliance accounts for 30%**, nearly as much as the domain on technology and services, even though this is only a foundational certification. That shows AWS treats security understanding as mandatory knowledge from the most basic level, not as material reserved for those going deeper.
+
+Billing, Pricing and Support accounts for 12%, which is not a small share for content learners often skip on the assumption that it is not technical.
+
+### What I Learned
+
+#### On monitoring and operations
+
+- Monitoring is not a matter of turning on a monitoring service and considering the job done. The pyramid model shows that infrastructure metrics sit near the bottom, while what really matters is the user experience at the top.
+- I understood why a system with normal health checks can still be delivering a poor experience, and why metrics at the business layer such as the successful login rate need to be measured as well.
+- I grasped the full cycle from identifying a risk through to improving after an incident, rather than stopping at setting up an alarm.
+
+#### On security
+
+- I saw the shift from security testing as a separate activity at the end of the cycle towards security being checked continuously from the design stage onwards.
+- I understood the important difference between a system that predicts vulnerabilities and one that verifies them through a real exploit. The second produces verifiable evidence, so its results are far more trustworthy.
+- I realised that leaking passwords and API keys into source code is a mistake common enough to require an automated scanner, rather than relying on each person's carefulness.
+- I noted the limits of automation: anything requiring business context or requiring multi-factor authentication to be bypassed still needs a human.
+
+#### On the certification path
+
+- I now have a concrete picture of the Cloud Practitioner exam structure instead of just knowing the certification by name.
+- The 30% weighting given to security and compliance is a signal to redistribute my revision time, rather than concentrating too heavily on the list of services.
+
+### Applying It To The Internship
+
+The event took place right after week 6 of the internship, when I had just finished the networking material and was starting to prepare the load balancing and high availability content for week 7. The three topics from the grand final affected my work afterwards as follows:
+
+- **From Topic 1:** in week 6 I had enabled VPC Flow Logs and sent them to CloudWatch Logs, but only for the purpose of debugging connectivity. The monitoring pyramid showed me that this is only a near-bottom layer. When deploying the load balanced architecture in week 7, I paid additional attention to application layer metrics such as latency and error rate rather than looking only at CPU utilisation.
+- **From Topic 1:** the shared responsibility aspect of an SLA connects directly to the Shared Responsibility Model I studied in week 2, but from a more concrete angle: AWS guarantees the infrastructure, while the user experience is the part I have to answer for myself.
+- **From Topic 2:** the problem of API keys leaking into source code reinforced the reason I had already chosen IAM roles over long-lived access keys back in week 4, and prompted me to review the configuration files in the report repository.
+- **From Topic 2:** the agent checking a design against the AWS Well-Architected standard reminded me to use those same pillars as a review checklist for the solution proposal, instead of drawing an architecture and leaving it at that.
+- **From Topic 3:** I adjusted the certification plan I had set in week 1, choosing Cloud Practitioner as a stepping stone before Solutions Architect Associate, and allocating more time to security and compliance in line with the actual exam weighting.
+
+### Photos From The Event
+
+<!--
+HOW TO INSERT IMAGES:
+1. Put the image files in: static/images/4-EventParticipated/4.2-Event2/
+2. Uncomment the lines below and correct the file names.
+3. Use file names without accents or spaces. For example: overview.png, topic1-sla.png
+-->
+
+<!-- ![Overview of the grand final](/images/4-EventParticipated/4.2-Event2/toan-canh.png) -->
+
+<!-- ![Topic 1 - SLA and the monitoring pyramid](/images/4-EventParticipated/4.2-Event2/topic1-sla.png) -->
+
+<!-- ![Topic 2 - AWS Security Agent](/images/4-EventParticipated/4.2-Event2/topic2-security-agent.png) -->
+
+<!-- ![Topic 3 - The structure of the AWS Cloud Practitioner exam](/images/4-EventParticipated/4.2-Event2/topic3-exam.png) -->
+
+![Photo taken at the event](/fcj-workshop-template/static/images/4.2-Event2/event.jpg)
+
+> The grand final had a completely different character from the opening round. Where the June 20 session tested what the attendees knew, this one revealed the areas someone new to AWS most easily overlooks. For me the topic on SLA and monitoring changed my thinking the most: until then I had implicitly assumed that if the system was running and the infrastructure metrics looked normal, everything was fine. The monitoring pyramid showed that this is only the lowest layer, and that the hardest part of operations lies in measuring what the user actually feels.

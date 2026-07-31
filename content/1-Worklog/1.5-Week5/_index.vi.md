@@ -1,59 +1,37 @@
 ---
 title: "Worklog Tuần 5"
-date: 2024-01-01
+date: 2026-07-05
 weight: 1
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 
 ### Mục tiêu tuần 5:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Tìm hiểu thêm về 1 số dịch vụ trên trang Console của AWS
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 1   | - Tìm hiểu về Bedrock                                                                                                   | 29/06/2026 | 29/06/2026      |https://ap-southeast-1.console.aws.amazon.com/bedrock/home?region=ap-southeast-1#/overview
+| 2   | - Tìm hiểu dịch vụ cơ sở dữ liệu quan hệ của Amazon | 29/06/2026 | 29/06/2026    | https://000005.awsstudygroup.com/|
+| 3   | - Tìm hiểu về Aurora. <br> - Tìm hiểu Aurora DSQL. <br> - Tìm hiểu Amazon Aurora DSQL khác gì với single-instance PostgreSQL. <br> -**Practice:**<br>&emsp; + Tạo database.<br>&emsp;+ Xóa database. | 29/06/2026 | 29/06/2026    | https://aws.amazon.com/vi/rds/aurora/ https://docs.aws.amazon.com/rds/latest/auroraextendedcontent/aurora-customers-dsql.html <br> <https://pages.awscloud.com/Getting-Started-with-Amazon-Aurora-Serverless-v2_2023_0310-SN-DAT_OD?did=ep_card-reg&amp;did=ep_card&trk=ep_card-ep_card-reg-112722aa-3f10-4c82-bf33-44e563f291e1&amp;sc_channel=el>|
+| 4   | - Tìm hiểu AWS FinOps Agent.<br> -**Practice:**<br>&emsp; + Tạo đại lí. <br>&emsp; + Xóa đại lí. | 03/07/2026 | 05/07/2026         |https://pages.awscloud.com/Getting-Started-with-GitOps_2021_0323-CON_OD.html https://us-east-1.console.aws.amazon.com/finops-agent/home?region=us-east-1#/overview|
+| 5   | - Tìm hiểu Jira integration.<br> -**Practice:**<br>&emsp; +Tạo Jira integration. | 03/07/2026 | 04/07/2026     |https://us-east-1.console.aws.amazon.com/finops-agent/home?region=us-east-1#/overview|
+
 
 
 ### Kết quả đạt được tuần 5:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Hiểu Amazon Aurora là gì và sự khác biệt giữa Aurora và single-instance PostgreSQL.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Tìm hiểu về Amazon Relational Database Service và Bedrock.
 
 * Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Có khả năng quản lý cơ sở dữ liệu trên AWS Console.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Tìm hiểu về việc tích hợp Jira và AWS FinOps Agent.
 
 

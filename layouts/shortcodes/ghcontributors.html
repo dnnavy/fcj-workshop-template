@@ -19,7 +19,18 @@
   }
 </style>
 <div class="ghContributors">
-  {{ $url := .Get 0 }} {{ range getJSON $url }}
+  {{ $url := .Get 0 }}
+  {{ $data := dict }}
+  {{ with try (resources.GetRemote $url) }}
+    {{ with .Err }}
+      {{ errorf "%s" . }}
+    {{ else with .Value }}
+      {{ $data = . | transform.Unmarshal }}
+    {{ else }}
+      {{ errorf "Unable to get remote resource %q" $url }}
+    {{ end }}
+  {{ end }}
+  {{ range $data }}
   <div>
     <img
       src="{{.avatar_url}}"

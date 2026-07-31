@@ -1,31 +1,44 @@
 ---
 title: "Blog 2"
-date: 2024-01-01
+date: 2026-07-29
 weight: 1
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# Làm quen AWS Serverless: Những dịch vụ Serverless mình lựa chọn để xây dựng workshop
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
-
-Các điểm chính cần nắm:
-
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
-
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
-
-...Hình ảnh...
-
-...Link...
-
-...Hướng dẫn...
+Mở đầu
+Khi bắt đầu lựa chọn công nghệ cho workshop, mình được khuyến nghị nên sử dụng kiến trúc Serverless trên nền tảng Amazon Web Services (AWS). Ban đầu, mình cho rằng Serverless đơn giản chỉ là "không cần thuê máy chủ" hoặc "không cần cài đặt Linux". Tuy nhiên, sau khi đọc tài liệu chính thức của AWS và trực tiếp triển khai ứng dụng đầu tiên, mình nhận ra khái niệm này rộng hơn rất nhiều.
+Serverless không phải là một dịch vụ riêng lẻ mà là một mô hình phát triển ứng dụng. Trong mô hình này, nhà phát triển không còn phải quan tâm đến việc quản lý máy chủ, cập nhật hệ điều hành hay cấu hình khả năng mở rộng. Thay vào đó, AWS chịu trách nhiệm vận hành toàn bộ hạ tầng, còn lập trình viên chỉ tập trung vào việc giải quyết bài toán nghiệp vụ.
+---
+Serverless có thật sự "không có máy chủ"?
+Đây là hiểu lầm phổ biến nhất của mình khi mới bắt đầu tìm hiểu. Thực tế, máy chủ vẫn tồn tại, nhưng người phát triển không cần trực tiếp quản lý chúng. AWS sẽ tự động chuẩn bị tài nguyên tính toán, triển khai ứng dụng, theo dõi trạng thái, mở rộng hoặc thu hẹp số lượng máy chủ dựa trên lưu lượng truy cập.
+Trong kiến trúc Serverless, quá trình xử lý diễn ra theo hướng event-driven. Khi có một sự kiện như người dùng gửi yêu cầu HTTP hoặc tải lên một tệp tin, AWS sẽ tự động kích hoạt đoạn mã tương ứng. Sau khi xử lý xong, tài nguyên được giải phóng thay vì luôn duy trì trạng thái hoạt động. Nhờ đó, hệ thống có thể tiết kiệm chi phí vì chỉ trả tiền cho thời gian thực sự sử dụng tài nguyên.
+---
+AWS Lambda - Trái tim của kiến trúc Serverless
+Trong hệ sinh thái Serverless của AWS, dịch vụ quan trọng nhất là AWS Lambda. Lambda cho phép lập trình viên triển khai các hàm (Function) để xử lý nghiệp vụ mà không cần quản lý máy chủ. Khi một sự kiện xảy ra, Lambda sẽ khởi tạo môi trường thực thi, chạy đoạn mã và trả kết quả.
+Ban đầu mình nghĩ việc tách thành nhiều Lambda sẽ khiến hệ thống phức tạp hơn. Tuy nhiên, sau khi tìm hiểu tài liệu AWS, mình nhận ra đây là cách thiết kế được khuyến nghị vì mỗi Lambda chỉ đảm nhiệm một trách nhiệm duy nhất, giúp việc bảo trì và mở rộng trở nên đơn giản hơn.
+---
+API Gateway - Cánh cửa của hệ thống
+Nếu Lambda chịu trách nhiệm xử lý nghiệp vụ thì Amazon API Gateway đóng vai trò là "cổng vào" của toàn bộ hệ thống. Mỗi khi người dùng gửi yêu cầu từ ứng dụng React, API Gateway sẽ tiếp nhận yêu cầu, xác thực người dùng, định tuyến đến Lambda phù hợp và trả kết quả về phía client.
+Trước đây, mình chỉ nghĩ API Gateway đơn giản là nơi định nghĩa các API. Tuy nhiên, sau khi triển khai thực tế, mình nhận ra dịch vụ này còn đảm nhiệm nhiều công việc khác như kiểm tra JWT Token, cấu hình CORS, giới hạn tốc độ truy cập (Rate Limiting) và ghi nhật ký hoạt động. Nhờ vậy, mã nguồn trong Lambda có thể tập trung hoàn toàn vào nghiệp vụ thay vì phải xử lý các chức năng hạ tầng.
+---
+DynamoDB - Cơ sở dữ liệu được thiết kế cho Serverless
+Đối với ứng dụng Serverless, AWS khuyến nghị sử dụng Amazon DynamoDB vì đây là cơ sở dữ liệu NoSQL có khả năng mở rộng tự động và độ trễ rất thấp.
+Một bài học quan trọng mình học được là DynamoDB không nên được thiết kế theo mô hình quan hệ truyền thống. Thay vào đó, AWS khuyến khích thiết kế dựa trên Access Pattern, tức là dựa trên cách dữ liệu sẽ được truy vấn trong thực tế. Ví dụ, thay vì quét toàn bộ bảng để tìm các buổi học của một giảng viên, mình sử dụng Global Secondary Index (GSI) để thực hiện truy vấn bằng lệnh Query. Cách tiếp cận này giúp hệ thống hoạt động hiệu quả hơn rất nhiều khi dữ liệu tăng lên.
+---
+Amazon Cognito - Không nên tự xây dựng hệ thống đăng nhập
+Ban đầu mình từng nghĩ việc tự viết chức năng đăng nhập bằng Lambda sẽ linh hoạt hơn. Tuy nhiên, sau khi đọc tài liệu AWS, mình nhận ra Cognito đã cung cấp sẵn nhiều chức năng quan trọng như xác thực người dùng, quản lý mật khẩu, phát hành JWT Token và hỗ trợ các chuẩn bảo mật phổ biến.
+---
+Kết luận
+Sau quá trình tìm hiểu và xây dựng dự án, điều thay đổi lớn nhất trong suy nghĩ của mình là Serverless không chỉ xoay quanh AWS Lambda. Một hệ thống Serverless hoàn chỉnh là sự phối hợp của nhiều dịch vụ như API Gateway, Cognito, DynamoDB, IAM và các cơ chế bảo mật khác.
+---
+Tài liệu tham khảo:
+"What is AWS Lambda?". (https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
+"What is Amazon API Gateway?". (https://docs.aws.amazon.com/.../developerguide/welcome.html)
+"What is Amazon DynamoDB?". (https://docs.aws.amazon.com/.../develop.../Introduction.html)
+"Amazon Cognito user pools". (https://docs.aws.amazon.com/.../cognito-user-pools.html)
+--- 
+Link bài blog:
+https://web.facebook.com/groups/awsstudygroupfcj/permalink/2227753051322988/?rdid=4BxzLitflB0OFY8E#

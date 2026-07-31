@@ -1,32 +1,38 @@
 ---
-title : "Clean up"
-date : 2024-01-01
-weight : 6
-chapter : false
+title: "Cleanup"
+date: 2024-01-01
+weight: 6
+chapter: false
 pre : " <b> 5.6. </b> "
 ---
-Congratulations on completing this workshop! 
-In this workshop, you learned architecture patterns for accessing Amazon S3 without using the Public Internet. 
-+ By creating a gateway endpoint, you enabled direct communication between EC2 resources and Amazon S3, without traversing an Internet Gateway. 
-+ By creating an interface endpoint you extended S3 connectivity to resources running in your on-premises data center via AWS Site-to-Site VPN or Direct Connect. 
 
-#### clean up
-1. Navigate to Hosted Zones on the left side of Route 53 console. Click the name of *s3.us-east-1.amazonaws.com* zone. Click Delete and confirm deletion by typing delete. 
+### 1. Delete Frontend Hosting (AWS Amplify)
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/delete-zone.png)
+You should delete the frontend interface first. 
+1. Open AWS Console -> search for **AWS Amplify**.
+2. Select the BK-Sync app you created.
+3. In the side menu, click **App settings** -> **General settings**.
+4. Scroll to the bottom and click **Delete app** to delete it.
+![alt text](image.png)
 
-2. Disassociate the Route 53 Resolver Rule - myS3Rule from "VPC Onprem" and Delete it. 
+### 2. Delete Backend Infrastructure (AWS SAM)
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/vpc.png)
+To avoid being charged by AWS, you must remove all created Lambdas, API Gateways, DynamoDB tables, etc.
 
-4. Open the CloudFormation console  and delete the two CloudFormation Stacks that you created for this lab:
-+ PLOnpremSetup
-+ PLCloudSetup
+**Method 1: Delete via CLI (Recommended)**
+Open Terminal (while in the `backend` directory) and run the command:
+```bash
+sam delete
+```
+Confirm with `y` for all questions. CloudFormation will automatically find and remove everything.
 
-![delete stack](/images/5-Workshop/5.6-Cleanup/delete-stack.png)
+**Method 2: Delete via Web Console (Fallback for errors)**
+Sometimes deleting via CLI fails (because AWS Secrets Manager locks the Secret with a 30-day protection window). If you encounter a `DELETE_FAILED` error for the `HmacSecretV2` resource, do the following:
+1. Open AWS Console -> search for **CloudFormation**.
+![alt text](image-1.png)
+2. Click on the `qr-attendance-backend-dev` stack, and select **Delete** (or **Retry delete** if it previously failed).
+![alt text](image-2.png)
+3. A prompt will appear. Select **Force delete this entire stack**, then click **Delete stack**.
+![alt text](image-3.png)
 
-5. Delete S3 buckets
-+ Open S3 console
-+ Choose the bucket we created for the lab, click and confirm empty. Click delete and confirm delete.
-
-![delete s3](/images/5-Workshop/5.6-Cleanup/delete-s3.png)
+The system is now completely cleaned up!

@@ -1,57 +1,48 @@
 ---
 title: "Week 3 Worklog"
-date: 2024-01-01
+date: 2026-06-21
 weight: 1
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
 
 ### Week 3 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Learn and general understand FinOps and Cloud Financial Management.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 1   | - Learn Cost Forecasting & Budgeting:  budget and budget actions                                                                                        | 15/06/2026 | 16/06/2026      |https://skillbuilder.aws/learn/YZYAV9M2UB/cloud-financial-management-finops-fundamentals--strategies-part-1/JG1XFPZQG1|
+| 2   | - Learn Cloud Financial Management: <br>&emsp; + Cost Reporting and Visualization.   <br>&emsp; + Cost Governance.    <br>&emsp; + Cost Optimization.   <br>&emsp; + CFM Strategies.                                    | 16/06/2026 | 19/06/2026      |https://skillbuilder.aws/learn/YZYAV9M2UB/cloud-financial-management-finops-fundamentals--strategies-part-1/JG1XFPZQG1  https://skillbuilder.aws/renderer/?module_id=Q1EPB3VD59%3A001.000.000&product_id=X59U3HSU75%3A001.000.000&registration_id=f66276f3-305c-578c-b75a-3b68e98698c0&referrer=https%3A%2F%2Fskillbuilder.aws%2Flearn%2FRE6C7ZPAHN%2Fcloud-financial-management-finops-fundamentals--strategies-part-2%2FX59U3HSU75&navigation=digital|
+| 3   | - Explore more about FinOps in AWS. <br> - AI Agent for CFM                            | 19/06/2026 | 21/06/2026      |https://aws.amazon.com/finops-agent/ https://aws.amazon.com/blogs/publicsector/accelerating-government-finops-with-amazon-quick/ https://aws.amazon.com/blogs/aws-cloud-financial-management/which-ai-tool-for-which-finops-use-case/ https://aws.amazon.com/marketplace/pp/prodview-h77jedsmpzs4k https://aws.amazon.com/blogs/aws-cloud-financial-management/aws-finops-agent-is-now-public-preview/ https://aws.amazon.com/blogs/aws-cloud-financial-management/aws-cloud-financial-management-key-reinvent-2025-launches-to-transform-your-finops-practice/ https://aws.amazon.com/blogs/publicsector/create-a-multicloud-finops-dashboard-with-amazon-quicksight-using-aws-services/ https://aws.amazon.com/marketplace/pp/prodview-7qktkj5vcflak https://aws.amazon.com/blogs/aws-cloud-financial-management/updated-cloud-financial-management-digital-training-courses-with-a-new-course-added-finops-for-genai/|
 
 
 ### Week 3 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* General understand FinOps and Cloud Financial Management.
 
-* Successfully created and configured an AWS Free Tier account.
+* Learn about Budget and Budget actions.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Learn
+Cost Reporting and Visualization:
+  * AWS cost and usage reporting options.
+  * Cost datasets.
+  * Preventative Methods.
+  * Detective Methods.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Learn concepts related to cost optimization:
+  * Elasticity.
+  * Underutilized Resources.
+  * Rightsizing.
+  * Modernization.
+  * Tooling.
+  * Cost-Aware Architecture.
 
-* Used AWS CLI to perform basic operations such as:
+* Learn CFM Strategies.
+  * Pricing Strategies.
+  * Cost Allocation.
+  * Cost Effectiveness & Key Performance Indicators.
+  * Sustainability.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
