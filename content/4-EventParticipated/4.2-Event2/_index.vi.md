@@ -184,6 +184,6 @@ HƯỚNG DẪN CHÈN ẢNH:
 
 <!-- ![Topic 3 - Cấu trúc kỳ thi AWS Cloud Practitioner](/images/4-EventParticipated/4.2-Event2/topic3-exam.png) -->
 
-![Ảnh chụp tại sự kiện](/fcj-workshop-template/static/images/4.2-Event2/event.jpg)
+![Ảnh chụp tại sự kiện](/static/images/4.2-Event2/event.jpg)
 
 > Vòng chung kết có tính chất khác hẳn vòng đầu. Nếu buổi 20/06 kiểm tra xem người tham dự biết những gì, thì buổi này cho thấy những phần mà một người mới học AWS rất dễ bỏ qua. Với em, chủ đề về SLA và giám sát là phần thay đổi cách nghĩ nhiều nhất: trước đó em vẫn ngầm hiểu rằng hệ thống chạy được và các chỉ số hạ tầng bình thường thì nghĩa là ổn. Mô hình kim tự tháp giám sát cho thấy đó mới là tầng thấp nhất, và phần khó nhất của việc vận hành nằm ở chỗ đo được thứ mà người dùng thực sự cảm nhận.

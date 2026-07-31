@@ -134,6 +134,6 @@ HƯỚNG DẪN CHÈN ẢNH:
 
 <!-- ![Ban giám khảo giải thích đáp án sau mỗi câu hỏi](/images/4-EventParticipated/4.1-Event1/giai-thich-dap-an.png) -->
 
-![Ảnh chụp tại sự kiện](/fcj-workshop-template/static/images/4.1-Event1/event.jpg)
+![Ảnh chụp tại sự kiện](/static/images/4.1-Event1/event.jpg)
 
 > Nhìn lại, đây là một cách mở đầu chương trình rất hiệu quả. Dù chỉ tham dự với vai trò khán giả, em vẫn thu được nhiều hơn kỳ vọng ban đầu. Giá trị lớn nhất không nằm ở việc biết thêm vài dịch vụ mới, mà ở việc lần đầu tiên tiếp cận AWS dưới góc nhìn của một bài toán doanh nghiệp có ràng buộc thật, thay vì chỉ là danh sách các dịch vụ cần ghi nhớ.

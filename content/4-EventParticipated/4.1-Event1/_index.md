@@ -134,6 +134,6 @@ HOW TO INSERT IMAGES:
 
 <!-- ![The judging panel explaining the answer after each question](/images/4-EventParticipated/4.1-Event1/giai-thich-dap-an.png) -->
 
-![Photo taken at the event](/fcj-workshop-template/static/images/4.1-Event1/event.jpg)
+![Photo taken at the event](/static/images/4.1-Event1/event.jpg)
 
 > Looking back, this was an effective way to open the program. Even though I only attended as a member of the audience, I took away more than I had expected. The greatest value was not learning a few more services, but the first exposure to AWS from the point of view of a real business problem with real constraints, rather than a list of services to memorise.

@@ -6,11 +6,6 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
-{{% notice warning %}}  
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
-Tại đây sẽ là phần liệt kê, giới thiệu các blogs mà các bạn đã đăng trên [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). Ví dụ:
 
 ###  [Blog 1 - Phương ngữ DSQL SQL: Amazon Aurora DSQL khác gì với single-instance PostgreSQL](3.1-Blog1/)
 Blog này giới thiệu bài viết phân tích chuyên sâu về phương ngữ SQL của Amazon Aurora DSQL và sự khác biệt cốt lõi so với PostgreSQL đơn thể (single-instance). Mặc dù Aurora DSQL giữ trọn khả năng tương thích cao với chuẩn PostgreSQL v16, kiến trúc phân tán shared-nothing và cơ chế tách biệt tính toán - lưu trữ đã mang lại những thay đổi quan trọng về lưu trữ dựa trên khóa chính, cơ chế kiểm soát đồng thời lạc quan (OCC), DDL bất đồng bộ cũng như xác thực qua AWS IAM. Đây là tài liệu tham khảo giá trị giúp các kiến trúc sư và nhà phát triển thiết kế tối ưu hệ thống và giảm thiểu rủi ro khi làm việc với cơ sở dữ liệu phân tán hoàn toàn serverless.

@@ -6,11 +6,6 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
-This section will list and introduce the blogs you have posted to [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). For example:
 
 ###  [Blog 1 - DSQL SQL Dialect: How Amazon Aurora DSQL Differs from Single-Instance PostgreSQL](3.1-Blog1/)
 This blog post introduces an in-depth analysis of the Amazon Aurora DSQL SQL dialect and its core differences from single-instance PostgreSQL. While Aurora DSQL retains full, high compatibility with the PostgreSQL v16 standard, its shared-nothing distributed architecture and decoupled compute-storage model bring key changes regarding primary-key-based storage, Optimistic Concurrency Control (OCC), asynchronous DDL, and AWS IAM authentication. This is a valuable reference for architects and developers to optimize system design and minimize risks when working with a fully serverless distributed database.

@@ -254,6 +254,6 @@ HƯỚNG DẪN CHÈN ẢNH:
 
 <!-- ![Đội Signal Scout trình bày canvas mô hình kinh doanh](/images/4-EventParticipated/4.3-Event3/doi-signal-scout.png) -->
 
-![Ảnh chụp tại sự kiện](/fcj-workshop-template/static/images/4.3-Event3/event.jpg)
+![Ảnh chụp tại sự kiện](/static/images/4.3-Event3/event.jpg)
 
 > So với hai sự kiện trước nặng về kiến thức và chuyên môn, buổi này nghiêng về trải nghiệm và câu chuyện thực tế. Điều em thấy giá trị nhất là được nghe những khó khăn cụ thể mà các đội đã gặp, kể cả những phần họ làm chưa tốt. Tài liệu kỹ thuật thường chỉ trình bày cách làm đúng, còn phần vì sao một cách làm thất bại trong hoàn cảnh cụ thể thì chỉ có thể nghe từ người đã trực tiếp trải qua. Riêng phần trình bày của đội Plan V còn cho em thấy chính công việc mình đang học có thể được nhìn dưới góc độ một bài toán cần tự động hóa. Buổi chia sẻ cũng khiến em bớt ngần ngại hơn với việc đăng ký tham gia một hackathon trong thời gian tới.
