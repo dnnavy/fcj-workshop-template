@@ -22,10 +22,10 @@ Trong workshop này, bạn sẽ học cách triển khai toàn bộ ứng dụng
 
 #### Nội dung
 
-1. [Giới thiệu](./5-Workshop/5.1-Ideas-and-Goals/)
-2. [Chuẩn bị](./5-Workshop/5.2-Prerequisites/)
-3. [Triển khai Backend](./5-Workshop/5.3-Backend-Deployment/)
-4. [Triển khai Frontend](./5-Workshop/5.4-Frontend-Deployment/)
-5. [Giao diện & Kiểm thử](./5-Workshop/5.5-Testing-and-Validation/)
+1. [Giới thiệu](/fcj-workshop-template/content/5-Workshop/5.1-Ideas-and-Goals/)
+2. [Chuẩn bị](/fcj-workshop-template/content/5-Workshop/5.2-Prerequisites/)
+3. [Triển khai Backend](/fcj-workshop-template/content/5-Workshop/5.3-Backend-Deployment/)
+4. [Triển khai Frontend](/fcj-workshop-template/content/5-Workshop/5.4-Frontend-Deployment/)
+5. [Giao diện & Kiểm thử](/fcj-workshop-template/content/5-Workshop/5.5-Testing-and-Validation/)
 6. [Dọn dẹp](./5-Workshop/5.6-Cleanup/)
 7. [Đóng góp & Trải nghiệm](./5-Workshop/5.7-Reflection/)
