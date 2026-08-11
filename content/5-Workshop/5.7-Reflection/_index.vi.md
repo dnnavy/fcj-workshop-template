@@ -3,11 +3,10 @@ title: "Đóng góp & Trải nghiệm"
 date: 2024-01-01
 weight: 7
 chapter: false
-pre: " <b> 5.7. </b> "
+pre : " <b> 5.7. </b> "
 ---
 
-
-## 1. Khó khăn gặp phải & Cách giải quyết
+### 1. Khó khăn gặp phải & Cách giải quyết
 
 **Khó khăn 1: Xung đột tài nguyên do Hard-code Name**
 - **Sự cố:** Bị lỗi đụng độ tên khi cố gắng triển khai nhiều môi trường (VD: `develop` và `local`) trên cùng 1 tài khoản AWS (do trùng tên `TopicName` và Secrets Manager `Name`).

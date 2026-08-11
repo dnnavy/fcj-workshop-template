@@ -8,25 +8,49 @@ pre: " <b> 3.1. </b> "
 
 # DSQL SQL Dialect: How Amazon Aurora DSQL Differs from Single-Instance PostgreSQL
 
-* Amazon Aurora DSQL is based on open-source PostgreSQL, but due to its distributed nature, there are key differences in supported features and behaviors. Understanding the distinctions between Aurora DSQL and standard PostgreSQL helps mitigate risks and design optimal schemas right from the start.
-* This article is intended for database architects, developers, and database administrators (DBAs) evaluating Aurora DSQL or working with PostgreSQL workloads on a distributed database.
-* Similarities: They are nearly identical in many aspects.
-    * Amazon Aurora DSQL uses standard PostgreSQL v16 and wire protocol v3.0+.
-    * Popular tools and libraries such as psql, pgjdbc, psycopg, Django, ActiveRecord, and Hibernate can connect and operate normally.
-    * SQL queries—assuming they use supported features—will return identical results (same NULL handling, sort order, arithmetic precision, and string behavior).
-    * Core SQL features remain intact (standard DML, DDL, transaction control, core data types). If your application uses standard SQL statements for transactional workloads, compatibility is very high.
+Amazon Aurora DSQL is based on open-source PostgreSQL, but due to its distributed nature, there are key differences in supported features and behaviors. Understanding the distinctions between Aurora DSQL and standard PostgreSQL helps mitigate risks and design optimal schemas right from the start.
+
+This article is intended for database architects, developers, and database administrators (DBAs) evaluating Aurora DSQL or working with PostgreSQL workloads on a distributed database.
+
 ---
-* Differences and Reasons: Syntax and behavioral differences in Aurora DSQL stem from its distributed, shared-nothing architecture.
-    * Primary Key-Ordered Storage: This is the most fundamental difference. Traditional PostgreSQL uses a heap storage structure where rows are stored in non-sequential pages unrelated to the primary key. In DSQL, data is stored and maintained in order by the primary key (applying to both tables and secondary indexes, which are ordered by their key columns).
-    * Not all operations are pushed down to the storage layer: Aurora DSQL separates compute and storage, which is a key factor enabling automatic scaling and fully serverless operation. This affects the dialect in two specific ways: index key type restrictions (not all PostgreSQL data types can be used as index keys in Aurora DSQL) and pushdown operations (simple equality and range comparisons on supported data types are usually pushed down to the storage layer; complex expressions, function calls, or operations on unsupported data types are evaluated at the compute layer after retrieving rows). Due to this compute-storage separation, a query that can be answered entirely from an index (without fetching base table rows) avoids an additional storage access round-trip.
-    * Optimistic Concurrency Control (OCC): PostgreSQL uses MVCC with row-level locks for write operations (concurrent write transactions hold locks that can block each other upon conflict). Aurora DSQL uses Optimistic Concurrency Control (OCC) (transactions execute without locking and are validated for conflicts at commit time). This does not change SQL syntax, but alters application behavior. It helps reduce bottlenecks and serialization errors; read-only transactions do not cause conflicts, and the isolation level is equivalent to PostgreSQL Repeatable Read (this is the single, fixed isolation level provided by the system).
-    * Asynchronous DDL: In PostgreSQL, DDL operates synchronously: when CREATE TABLE returns, the table exists. In Aurora DSQL, some DDL statements operate synchronously while others do not. This introduces several dialect constraints: only one DDL statement per transaction; DDL and DML cannot be combined in the same transaction; for asynchronous DDL, you must verify that the DDL operation has completed (by running SELECT * FROM sys.jobs or waiting for the job_id to finish) before executing operations dependent on that schema change. Read and write operations continue without interruption during DDL execution.
-    * IAM-Based Authentication (Not Passwords): Aurora DSQL replaces PostgreSQL's pg_hba.conf and username/password login mechanism with AWS Identity and Access Management (IAM). Connections are made using short-lived tokens generated via the AWS SDK. This does not change the SQL language, but changes every connection string and authentication flow in the application.
-    * Unsupported Features Affecting the Dialect: Not all PostgreSQL features have direct equivalents in Aurora DSQL.
+
+### Similarities
+
+Amazon Aurora DSQL and single-instance PostgreSQL are nearly identical in many aspects:
+
+* **Version & Wire Protocol:** Uses standard PostgreSQL v16 and wire protocol v3.0+.
+* **Ecosystem Tools:** Popular tools and libraries such as `psql`, `pgjdbc`, `psycopg`, Django, ActiveRecord, and Hibernate connect and operate seamlessly.
+* **Query Execution:** Supported SQL queries return identical results (same `NULL` handling, sort order, arithmetic precision, and string behavior).
+* **Core SQL Capabilities:** Standard DML, DDL, transaction controls, and core data types remain intact. Applications using standard SQL statements will enjoy very high compatibility.
+
 ---
-* Conclusion: Amazon Aurora DSQL uses PostgreSQL's parser, planner, and type system, so the SQL language is fundamentally compatible. The focus is on understanding how Aurora DSQL is similar to and different from PostgreSQL.
+
+### Differences and Reasons
+
+Syntax and behavioral differences in Aurora DSQL stem from its distributed, shared-nothing architecture:
+
+* **Primary Key-Ordered Storage:** Traditional PostgreSQL uses a heap structure where rows are stored non-sequentially. In DSQL, data is strictly stored and ordered by the primary key for both base tables and secondary indexes.
+* **Compute & Storage Separation:**
+  * *Index Key Type Restrictions:* Not all PostgreSQL data types can serve as index keys in DSQL.
+  * *Pushdown Operations:* Simple equality and range queries are pushed down to storage. Complex expressions and function calls are evaluated at the compute layer after row retrieval.
+  * *Index-Only Queries:* Queries answered entirely from index data avoid an additional storage access round-trip.
+* **Optimistic Concurrency Control (OCC):** Replaces traditional MVCC row-locking with OCC (transactions validate for conflicts at commit time). This eliminates locking bottlenecks and serialization errors. The system operates on a single, fixed isolation level: `Repeatable Read`.
+* **Asynchronous DDL:** Certain DDL operations execute asynchronously. Constraints include: maximum one DDL statement per transaction, no mixing DDL and DML in the same transaction, and verifying job completion via `sys.jobs` before performing dependent schema changes.
+* **IAM-Based Authentication:** Replaces `pg_hba.conf` and password authentication with AWS IAM short-lived tokens.
+* **Unsupported Features:** Certain single-instance PostgreSQL features do not have direct equivalents in Aurora DSQL.
+
 ---
-References:
-https://aws.amazon.com/...dsql-sql-dialect-how-amazon.../
+
+### Conclusion
+
+Amazon Aurora DSQL shares PostgreSQL's parser, planner, and type system, making the SQL language fundamentally compatible. Successful implementation relies on understanding how its distributed architecture alters execution and storage patterns.
+
 ---
-Blog's link: https://web.facebook.com/groups/awsstudygroupfcj/permalink/2227753051322988/?rdid=4BxzLitflB0OFY8E#
+
+### References
+
+* [Amazon Aurora DSQL SQL Dialect Documentation](https://docs.aws.amazon.com/aurora-dsql/latest/userguide/what-is-aurora-dsql.html)
+
+---
+
+**Blog Link:** [Facebook Group Post](https://web.facebook.com/groups/awsstudygroupfcj/permalink/2227753051322988/)

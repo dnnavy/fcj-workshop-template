@@ -6,7 +6,6 @@ chapter: false
 pre : " <b> 5.7. </b> "
 ---
 
-
 ### 1. Difficulties encountered & Solutions
 
 **Difficulty 1: Resource collisions due to Hard-coded Names**

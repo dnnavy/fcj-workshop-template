@@ -1,17 +1,58 @@
 ---
-title: "Các bài blogs đã đăng"
-date: 2024-01-01
-weight: 3
+title: "Blog 2"
+date: 2026-07-29
+weight: 1
 chapter: false
-pre: " <b> 3. </b> "
+pre: " <b> 3.2. </b> "
 ---
 
+# Làm quen AWS Serverless: Những dịch vụ Serverless mình lựa chọn để xây dựng workshop
 
-###  [Blog 1 - Phương ngữ DSQL SQL: Amazon Aurora DSQL khác gì với single-instance PostgreSQL](3.1-Blog1/)
-Blog này giới thiệu bài viết phân tích chuyên sâu về phương ngữ SQL của Amazon Aurora DSQL và sự khác biệt cốt lõi so với PostgreSQL đơn thể (single-instance). Mặc dù Aurora DSQL giữ trọn khả năng tương thích cao với chuẩn PostgreSQL v16, kiến trúc phân tán shared-nothing và cơ chế tách biệt tính toán - lưu trữ đã mang lại những thay đổi quan trọng về lưu trữ dựa trên khóa chính, cơ chế kiểm soát đồng thời lạc quan (OCC), DDL bất đồng bộ cũng như xác thực qua AWS IAM. Đây là tài liệu tham khảo giá trị giúp các kiến trúc sư và nhà phát triển thiết kế tối ưu hệ thống và giảm thiểu rủi ro khi làm việc với cơ sở dữ liệu phân tán hoàn toàn serverless.
+Khi bắt đầu lựa chọn công nghệ cho workshop, mình được khuyến nghị nên sử dụng kiến trúc Serverless trên nền tảng Amazon Web Services (AWS). Ban đầu, mình cho rằng Serverless đơn giản chỉ là "không cần thuê máy chủ" hoặc "không cần cài đặt Linux". Tuy nhiên, sau khi đọc tài liệu chính thức của AWS và trực tiếp triển khai ứng dụng đầu tiên, mình nhận ra khái niệm này rộng hơn rất nhiều.
 
-###  [Blog 2 - AWS SAM là gì? Tại sao AWS SAM không được xem là một dịch vụ Serverless của AWS?](3.2-Blog2/)
-Blog này chia sẻ trải nghiệm thực tế về hành trình làm quen với kiến trúc AWS Serverless và cách lựa chọn bộ dịch vụ phù hợp để xây dựng workshop. Bài viết làm rõ những hiểu lầm phổ biến về khái niệm "không máy chủ", tư duy xử lý theo sự kiện (event-driven), cùng vai trò phối hợp chặt chẽ của bộ khung dịch vụ cốt lõi bao gồm AWS Lambda, API Gateway, DynamoDB (với bài học về Access Pattern & GSI) và Amazon Cognito. Đây là góc nhìn tổng quan và thực tế giúp bạn hình dung bức tranh toàn cảnh để thiết kế một hệ thống Serverless hoàn chỉnh, tối ưu chi phí và dễ dàng mở rộng.
+Serverless không phải là một dịch vụ riêng lẻ mà là một mô hình phát triển ứng dụng. Trong mô hình này, nhà phát triển không còn phải quan tâm đến việc quản lý máy chủ, cập nhật hệ điều hành hay cấu hình khả năng mở rộng. Thay vào đó, AWS chịu trách nhiệm vận hành toàn bộ hạ tầng, còn lập trình viên chỉ tập trung vào việc giải quyết bài toán nghiệp vụ.
 
-###  [Blog 3 - AWS SAM là gì? Tại sao AWS SAM không được xem là một dịch vụ Serverless của AWS?](3.3-Blog3/)
-Blog này giải thích bản chất của AWS Serverless Application Model (AWS SAM) và lý do tại sao bộ công cụ phổ biến này lại không được xếp vào nhóm "dịch vụ Serverless" của AWS. Qua bài viết, bạn sẽ hiểu rõ tư duy Hạ tầng dưới dạng mã nguồn (Infrastructure as Code - IaC), vai trò "bản thiết kế" của tệp template.yaml, các lệnh CLI quan trọng trong quá trình phát triển (sam init, build, local, deploy), cùng sự khác biệt cốt lõi giữa một khung phát triển (development framework) và một dịch vụ thực thi thời gian thực (runtime service).
+### Serverless có thật sự "không có máy chủ"?
+
+Đây là hiểu lầm phổ biến nhất của mình khi mới bắt đầu tìm hiểu. Thực tế, máy chủ vẫn tồn tại, nhưng người phát triển không cần trực tiếp quản lý chúng. AWS sẽ tự động chuẩn bị tài nguyên tính toán, triển khai ứng dụng, theo dõi trạng thái, mở rộng hoặc thu hẹp số lượng máy chủ dựa trên lưu lượng truy cập.
+
+Trong kiến trúc Serverless, quá trình xử lý diễn ra theo hướng event-driven. Khi có một sự kiện như người dùng gửi yêu cầu HTTP hoặc tải lên một tệp tin, AWS sẽ tự động kích hoạt đoạn mã tương ứng. Sau khi xử lý xong, tài nguyên được giải phóng thay vì luôn duy trì trạng thái hoạt động. Nhờ đó, hệ thống có thể tiết kiệm chi phí vì chỉ trả tiền cho thời gian thực sự sử dụng tài nguyên.
+
+### AWS Lambda - Trái tim của kiến trúc Serverless
+
+Trong hệ sinh thái Serverless của AWS, dịch vụ quan trọng nhất là AWS Lambda. Lambda cho phép lập trình viên triển khai các hàm (Function) để xử lý nghiệp vụ mà không cần quản lý máy chủ. Khi một sự kiện xảy ra, Lambda sẽ khởi tạo môi trường thực thi, chạy đoạn mã và trả kết quả.
+
+Ban đầu mình nghĩ việc tách thành nhiều Lambda sẽ khiến hệ thống phức tạp hơn. Tuy nhiên, sau khi tìm hiểu tài liệu AWS, mình nhận ra đây là cách thiết kế được khuyến nghị vì mỗi Lambda chỉ đảm nhiệm một trách nhiệm duy nhất, giúp việc bảo trì và mở rộng trở nên đơn giản hơn.
+
+### API Gateway - Cánh cửa của hệ thống
+
+Nếu Lambda chịu trách nhiệm xử lý nghiệp vụ thì Amazon API Gateway đóng vai trò là "cổng vào" của toàn bộ hệ thống. Mỗi khi người dùng gửi yêu cầu từ ứng dụng React, API Gateway sẽ tiếp nhận yêu cầu, xác thực người dùng, định tuyến đến Lambda phù hợp và trả kết quả về phía client.
+
+Trước đây, mình chỉ nghĩ API Gateway đơn giản là nơi định nghĩa các API. Tuy nhiên, sau khi triển khai thực tế, mình nhận ra dịch vụ này còn đảm nhiệm nhiều công việc khác như kiểm tra JWT Token, cấu hình CORS, giới hạn tốc độ truy cập (Rate Limiting) và ghi nhật ký hoạt động. Nhờ vậy, mã nguồn trong Lambda có thể tập trung hoàn toàn vào nghiệp vụ thay vì phải xử lý các chức năng hạ tầng.
+
+### DynamoDB - Cơ sở dữ liệu được thiết kế cho Serverless
+
+Đối với ứng dụng Serverless, AWS khuyến nghị sử dụng Amazon DynamoDB vì đây là cơ sở dữ liệu NoSQL có khả năng mở rộng tự động và độ trễ rất thấp.
+
+Một bài học quan trọng mình học được là DynamoDB không nên được thiết kế theo mô hình quan hệ truyền thống. Thay vào đó, AWS khuyến khích thiết kế dựa trên Access Pattern, tức là dựa trên cách dữ liệu sẽ được truy vấn trong thực tế. Ví dụ, thay vì quét toàn bộ bảng để tìm các buổi học của một giảng viên, mình sử dụng Global Secondary Index (GSI) để thực hiện truy vấn bằng lệnh Query. Cách tiếp cận này giúp hệ thống hoạt động hiệu quả hơn rất nhiều khi dữ liệu tăng lên.
+
+### Amazon Cognito - Không nên tự xây dựng hệ thống đăng nhập
+
+Ban đầu mình từng nghĩ việc tự viết chức năng đăng nhập bằng Lambda sẽ linh hoạt hơn. Tuy nhiên, sau khi đọc tài liệu AWS, mình nhận ra Cognito đã cung cấp sẵn nhiều chức năng quan trọng như xác thực người dùng, quản lý mật khẩu, phát hành JWT Token và hỗ trợ các chuẩn bảo mật phổ biến.
+
+### Kết luận
+
+Sau quá trình tìm hiểu và xây dựng dự án, điều thay đổi lớn nhất trong suy nghĩ của mình là Serverless không chỉ xoay quanh AWS Lambda. Một hệ thống Serverless hoàn chỉnh là sự phối hợp của nhiều dịch vụ như API Gateway, Cognito, DynamoDB, IAM và các cơ chế bảo mật khác.
+
+---
+
+### Tài liệu tham khảo
+
+* ["What is AWS Lambda?"](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
+* ["What is Amazon API Gateway?"](https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html)
+* ["What is Amazon DynamoDB?"](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)
+* ["Amazon Cognito user pools"](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html)
+
+---
+
+**Link bài blog:** [Facebook Group Post](https://web.facebook.com/groups/awsstudygroupfcj/permalink/2227753051322988/)
