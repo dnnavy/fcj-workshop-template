@@ -184,6 +184,6 @@ HOW TO INSERT IMAGES:
 
 <!-- ![Topic 3 - The structure of the AWS Cloud Practitioner exam](/images/4-EventParticipated/4.2-Event2/topic3-exam.png) -->
 
-![Photo taken at the event](/static/images/4.2-Event2/event.jpg)
+![Photo taken at the event](/images/4.2-Event2/event.jpg)
 
 > The grand final had a completely different character from the opening round. Where the June 20 session tested what the attendees knew, this one revealed the areas someone new to AWS most easily overlooks. For me the topic on SLA and monitoring changed my thinking the most: until then I had implicitly assumed that if the system was running and the infrastructure metrics looked normal, everything was fine. The monitoring pyramid showed that this is only the lowest layer, and that the hardest part of operations lies in measuring what the user actually feels.

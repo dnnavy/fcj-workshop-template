@@ -254,6 +254,6 @@ HOW TO INSERT IMAGES:
 
 <!-- ![Team Signal Scout presenting their business model canvas](/images/4-EventParticipated/4.3-Event3/doi-signal-scout.png) -->
 
-![Photo taken at the event](/static/images/4.3-Event3/event.jpg)
+![Photo taken at the event](/images/4.3-Event3/event.jpg)
 
 > Compared with the two earlier events, which were weighted towards knowledge and technical depth, this one leaned towards experience and real stories. What I found most valuable was hearing the specific difficulties the teams had run into, including the parts they had not handled well. Technical documentation usually only presents the correct approach, whereas the reason an approach fails in a specific situation can only be heard from someone who went through it. Team Plan V's presentation in particular showed me that the very work I am learning can be looked at as a problem worth automating. The session also made me far less hesitant about signing up for a hackathon myself.
