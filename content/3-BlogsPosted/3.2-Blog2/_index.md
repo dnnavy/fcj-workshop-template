@@ -47,6 +47,7 @@ After researching and building the project, my biggest mindset change was recogn
 ---
 
 ### References
+
 * ["What is AWS Lambda?"](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
 * ["What is Amazon API Gateway?"](https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html)
 * ["What is Amazon DynamoDB?"](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)
