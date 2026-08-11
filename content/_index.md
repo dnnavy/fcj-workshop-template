@@ -29,10 +29,10 @@ chapter: false
 
 ### Report Content
 
-1.  [Worklog](/fcj-workshop-template/content/1-Worklog/)
-2.  [Proposal](/fcj-workshop-template/content/2-Proposal/)
-3.  [BlogsPosted](/fcj-workshop-template/content/3-BlogsPosted/)
-4.  [Events Participated](/fcj-workshop-template/content/4-EventParticipated/)
-5.  [Workshop](/fcj-workshop-template/content/5-Workshop/)
-6.  [Self-evaluation](/fcj-workshop-template/content/6-Self-evaluation/)
-7.  [Sharing and Feedback](/fcj-workshop-template/content/7-Feedback/)
+1.  [Worklog](./1-Worklog/)
+2.  [Proposal](./2-Proposal/)
+3.  [BlogsPosted](./3-BlogsPosted/)
+4.  [Events Participated](./4-EventParticipated/)
+5.  [Workshop](./5-Workshop/)
+6.  [Self-evaluation](./6-Self-evaluation/)
+7.  [Sharing and Feedback](./7-Feedback/)
