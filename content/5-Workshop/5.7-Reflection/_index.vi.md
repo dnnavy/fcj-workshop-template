@@ -1,12 +1,13 @@
 ---
-title: "Đóng góp và Trải nghiệm"
+title: "Đóng góp & Trải nghiệm"
 date: 2024-01-01
 weight: 7
 chapter: false
-pre: " <b> 5.7. </b> "
+pre : " <b> 5.7. </b> "
 ---
 
-## 1. Khó khăn gặp phải và Cách giải quyết
+
+## 1. Khó khăn gặp phải & Cách giải quyết
 
 **Khó khăn 1: Xung đột tài nguyên do Hard-code Name**
 - **Sự cố:** Bị lỗi đụng độ tên khi cố gắng triển khai nhiều môi trường (VD: `develop` và `local`) trên cùng 1 tài khoản AWS (do trùng tên `TopicName` và Secrets Manager `Name`).
@@ -18,6 +19,13 @@ pre: " <b> 5.7. </b> "
 
 Những trải nghiệm này đã mang lại bài học vô giá về sự tỉ mỉ khi vận hành hạ tầng Serverless và nguyên tắc Đặc quyền Tối thiểu trên AWS.
 
-## 2. Đóng góp cá nhân
+### 2. Đóng góp cá nhân
 
-Trong quá trình thực hiện dự án, tôi đã trực tiếp tham gia hiện thực hóa cả mảng Frontend ở giai đoạn sau và mảng tìm hiểu để phát triển kiểm thử Cloud và FinOps ở giai đoạn đầu. Nhờ đó mà tôi đã được tìm hiểu và biết thêm nhiều kiến thức hoàn toàn mới đối với tôi về Cloud và FinOps. Ngoài ra, việc trực tiếp làm mảng Frontend song song với kiểm thử ứng dụng giúp tôi có góc nhìn toàn diện về hệ thống ở cả hai khía cạnh kiểm thử và phát triển, từ đó dễ dàng đặt mình vào vị trí người dùng cuối để đề xuất các giải pháp kỹ thuật tối ưu.
+Trong quá trình thực hiện dự án, tôi đã trực tiếp tham gia hiện thực hóa cả mảng Frontend ở
+giai đoạn sau và mảng tìm hiểu để phát triển kiểm thử Cloud và FinOps ở giai đoạn đầu. Nhờ
+đó mà tôi đã được tìm hiểu và biết thêm nhiều về những kiến thức có thể gọi là hoàn toàn mới
+với tôi về Cloud và FinOps. Ngoài ra vì trực tiếp làm mảng frontend song song với kiểm thử
+ứng dụng giúp tôi có góc nhìn toàn diện về hệ thống và có góc nhìn song song ở cả góc độ kiểm
+thử lẫn phát triển, giúp tôi dễ dàng đặt mình vào vị trí của người dùng cuối để đề xuất các giải
+pháp kỹ thuật tối ưu.
+
