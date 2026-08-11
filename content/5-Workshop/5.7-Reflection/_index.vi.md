@@ -21,11 +21,5 @@ Những trải nghiệm này đã mang lại bài học vô giá về sự tỉ 
 
 ### 2. Đóng góp cá nhân
 
-Trong quá trình thực hiện dự án, tôi đã trực tiếp tham gia hiện thực hóa cả mảng Frontend ở
-giai đoạn sau và mảng tìm hiểu để phát triển kiểm thử Cloud và FinOps ở giai đoạn đầu. Nhờ
-đó mà tôi đã được tìm hiểu và biết thêm nhiều về những kiến thức có thể gọi là hoàn toàn mới
-với tôi về Cloud và FinOps. Ngoài ra vì trực tiếp làm mảng frontend song song với kiểm thử
-ứng dụng giúp tôi có góc nhìn toàn diện về hệ thống và có góc nhìn song song ở cả góc độ kiểm
-thử lẫn phát triển, giúp tôi dễ dàng đặt mình vào vị trí của người dùng cuối để đề xuất các giải
-pháp kỹ thuật tối ưu.
+During the project, I actively contributed to both the early-stage research for Cloud and FinOps testing and the subsequent frontend implementation. This experience broadened my technical scope with completely new concepts in Cloud and FinOps. Additionally, balancing frontend development with application testing provided me with a comprehensive, dual-perspective view as both a developer and a tester, allowing me to align technical solutions closely with end-user needs.
 
