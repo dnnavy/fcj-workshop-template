@@ -27,7 +27,6 @@ pre: " <b> 3.1. </b> "
 * Conclusion: Amazon Aurora DSQL uses PostgreSQL's parser, planner, and type system, so the SQL language is fundamentally compatible. The focus is on understanding how Aurora DSQL is similar to and different from PostgreSQL.
 ---
 References:
-Tài liệu tham khảo:
 https://aws.amazon.com/...dsql-sql-dialect-how-amazon.../
 ---
 Blog's link: https://web.facebook.com/groups/awsstudygroupfcj/permalink/2227753051322988/?rdid=4BxzLitflB0OFY8E#
