@@ -21,4 +21,4 @@ These debugging experiences provided invaluable lessons on the meticulousness re
 
 ### 2. Personal Contributions
 
-During the project's implementation, I was directly involved in bringing both the Frontend and Backend to life. Connecting the backend Serverless services with the user interface myself helped me grasp the overarching data flow comprehensively. Thanks to this holistic view, I was also able to oversee the general technical progress, assist with debugging, and guide how different modules should be pieced together to ensure the system operates as smoothly and uniformly as possible.
+During the project, I actively contributed to both the early-stage research for Cloud and FinOps testing and the subsequent frontend implementation. This experience broadened my technical scope with completely new concepts in Cloud and FinOps. Additionally, balancing frontend development with application testing provided me with a comprehensive, dual-perspective view as both a developer and a tester, allowing me to align technical solutions closely with end-user needs.
