@@ -18,14 +18,14 @@ pre: " <b> 1.2. </b> "
 | 2   | - Tạo tài khoản AWS Skill Builder.                                                              | 10/06/2026 | 10/06/2026     ||
 | 3   | - Tìm hiểu về Quản lí tài chính điện toán đám mây: <br>&emsp; + Kiến thức nền tảng về CFM.   <br>&emsp; + Nguyên lí thiết kế CFM.    <br>&emsp; + Đánh giá chuyển dịch lên đám mây và giá trị kinh doanh.            | 10/06/2026 | 13/06/2026      |https://skillbuilder.aws/learn/YZYAV9M2UB/cloud-financial-management-finops-fundamentals--strategies-part-1/JG1XFPZQG1|
 | 4   | - Tìm hiểu về Dự đoán chi phí và lập ngân sách:   <br>&emsp; + Dự đoán chi phí. <br>&emsp; + Ước tính chi phí.                                  | 13/06/2026 | 14/06/2026      |https://skillbuilder.aws/learn/YZYAV9M2UB/cloud-financial-management-finops-fundamentals--strategies-part-1/JG1XFPZQG1|
-
+| 5   | - Tìm hiểu cơ sở dữ liệu NoSQL cơ bản với Amazon DynamoDB            | 13/06/2026 | 14/06/2026      |https://000060.awsstudygroup.com/|
 
 ### Kết quả đạt được tuần 2:
 * Tạo tài khoản AWS Skill Builder thành công, làm quen với giao diện trang web.
 
 * Hiểu Quản lí tài chính điện toán đám mây(CFM) là gì.
 
-* Hiểu cơ bản về nguyên lí thiết kế CFM.
+* Hiểu cơ bản về nguyên lí thiết kế CFM, DynamoDB.
 
 * Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
 

@@ -18,11 +18,12 @@ pre: " <b> 1.2. </b> "
 | 2   | - Create AWS Skill Builder account.                                                              | 10/06/2026 | 10/06/2026      ||
 | 3   | - Learn Cloud Financial Management: <br>&emsp; + Basics of CFM.   <br>&emsp; + CFM Design Principles.    <br>&emsp; + Cloud Migration Evaluation & Business Value.            | 10/06/2026 | 13/06/2026      |https://skillbuilder.aws/learn/YZYAV9M2UB/cloud-financial-management-finops-fundamentals--strategies-part-1/JG1XFPZQG1|
 | 4   | - Learn Cost Forecasting & Budgeting:  <br>&emsp;  + Forecast cost.                 <br>&emsp; + Estimate cost            | 13/06/2026 | 14/06/2026      |https://skillbuilder.aws/learn/YZYAV9M2UB/cloud-financial-management-finops-fundamentals--strategies-part-1/JG1XFPZQG1|
+| 5   | - Learn NoSQL Database Essentials with Amazon DynamoDB            | 13/06/2026 | 14/06/2026      |https://000060.awsstudygroup.com/|
 
 ### Week 2 Achievements:
 * Successfully created an AWS Skill Builder account and explore the website interface.
 
-* Understood what is Cloud Financial Management (CFM).
+* Understood what is Cloud Financial Management (CFM), DynamoDB.
 
 * Genenal understanding CFM Design Principles.
 
