@@ -1,6 +1,6 @@
 ---
 title: "Proposal"
-date: 2026-07-31
+date: 2026-07-29
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
@@ -37,9 +37,9 @@ The system is designed with a **100% Serverless** model, taking full advantage o
 
 ### Timeline (8 Weeks)
 - **Week 1-2:** Requirement analysis, system architecture design (Use Cases, Sequence Diagrams), and repository setup.
-- **Week 3-4:** Backend system development (AWS SAM, Lambda, API Gateway, DynamoDB).
-- **Week 5-6:** Frontend interface development (React/Vite) and API integration.
-- **Week 7:** Beta testing and bug fixing.
+- **Week 3-4-5-6:** Backend system development (AWS SAM, Lambda, API Gateway, DynamoDB).
+- **Week 5-6-7:** Frontend interface development (React/Vite) and API integration.
+- **Week 7-8:** Beta testing and bug fixing.
 - **Week 8:** Documentation, security hardening, and project presentation.
 
 ### Budget

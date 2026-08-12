@@ -1,6 +1,6 @@
 ---
 title: "Bản đề xuất"
-date: 2026-07-31
+date: 2026-07-29
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
@@ -24,8 +24,8 @@ Sử dụng mã QR tĩnh để điểm danh thì dễ bị sinh viên chụp ả
 
 Hệ thống được thiết kế theo mô hình **Serverless 100%**, tận dụng tối đa các dịch vụ managed của AWS:
 
-![Sơ đồ kiến trúc giải pháp](/images/dia.jpg)
-<!-- 123 -->
+![Solution Architecture Diagram](/images/dia.jpg)
+
 | Dịch vụ AWS | Mục đích / Vai trò | Lý do lựa chọn |
 |---|---|---|
 | **Amazon Cognito** | Quản lý danh tính người dùng (Xác thực & Phân quyền Admin, Teacher, Student) | Tiện lợi, có sẵn giao diện đăng nhập, an toàn |
@@ -37,9 +37,9 @@ Hệ thống được thiết kế theo mô hình **Serverless 100%**, tận d�
 
 ### Timeline (8 tuần)
 - **Tuần 1-2:** Khảo sát yêu cầu, thiết kế kiến trúc hệ thống (Sơ đồ Use Case, Sequence Diagram) và setup kho lưu trữ (GitHub).
-- **Tuần 3-4:** Phát triển hệ thống Backend (AWS SAM, Lambda, API Gateway, DynamoDB).
-- **Tuần 5-6:** Xây dựng giao diện Frontend (React/Vite) và tích hợp API.
-- **Tuần 7:** Triển khai thử nghiệm (Beta testing) và sửa lỗi (Bug fixing).
+- **Tuần 3-4-5-6:** Phát triển hệ thống Backend (AWS SAM, Lambda, API Gateway, DynamoDB).
+- **Tuần 5-6-7:** Xây dựng giao diện Frontend (React/Vite) và tích hợp API.
+- **Tuần 7-8:** Triển khai thử nghiệm (Beta testing) và sửa lỗi (Bug fixing).
 - **Tuần 8:** Viết tài liệu, tinh chỉnh bảo mật và báo cáo dự án.
 
 ### Ngân sách 
