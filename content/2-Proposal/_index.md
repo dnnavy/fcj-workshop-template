@@ -24,7 +24,7 @@ Using static QR codes for attendance makes it easy for students to take photos a
 
 The system is designed with a **100% Serverless** model, taking full advantage of AWS managed services:
 
-![Solution Architecture Diagram](/images/2-Proposal/solution_architect.jpg)
+![Solution Architecture Diagram](/images/dia.jpg)
 
 | AWS Service | Purpose / Role | Reason for Selection |
 |---|---|---|

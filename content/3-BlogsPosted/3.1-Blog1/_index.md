@@ -50,6 +50,9 @@ Amazon Aurora DSQL shares PostgreSQL's parser, planner, and type system, making 
 ### References
 
 * [Amazon Aurora DSQL SQL Dialect Documentation](https://docs.aws.amazon.com/aurora-dsql/latest/userguide/what-is-aurora-dsql.html)
+* [SQL feature compatibility in Aurora DSQL](https://docs.aws.amazon.com/aurora-dsql/latest/userguide/working-with-postgresql-compatibility.html)
+* [Aurora DSQL and PostgreSQL](https://docs.aws.amazon.com/aurora-dsql/latest/userguide/working-with.html)
+* [What is Amazon Aurora DSQL](https://docs.aws.amazon.com/aurora-dsql/latest/userguide/what-is-aurora-dsql.html)
 
 ---
 
