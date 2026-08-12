@@ -1,13 +1,13 @@
 ---
-title: "Week 6 Worklog"
+title: "Week 5 Worklog"
 date: 2026-07-05
-weight: 1
+weight: 5
 chapter: false
-pre: " <b> 1.6. </b> "
+pre: " <b> 1.5. </b> "
 ---
 
 
-### Week 6 Objectives:
+### Week 5 Objectives:
 
 * Explore more service in AWS Console.
 
@@ -21,7 +21,7 @@ pre: " <b> 1.6. </b> "
 | 5   | - Explore Jira integration.<br> -**Practice:**<br>&emsp; + Setup Jira integration. | 03/07/2026 | 04/07/2026      |https://us-east-1.console.aws.amazon.com/finops-agent/home?region=us-east-1#/overview|
 
 
-### Week 6 Achievements:
+### Week 5 Achievements:
 
 * Understood what Amazon Aurora is and the diffenrence between Aurora and single-instance PostgreSQL.
 

@@ -24,7 +24,7 @@ Sử dụng mã QR tĩnh để điểm danh thì dễ bị sinh viên chụp ả
 
 Hệ thống được thiết kế theo mô hình **Serverless 100%**, tận dụng tối đa các dịch vụ managed của AWS:
 
-![Sơ đồ kiến trúc giải pháp](/images/2-Proposal/platform_architecture.jpeg)
+![Sơ đồ kiến trúc giải pháp](/images/2-Proposal/solution_architect.jpg)
 
 | Dịch vụ AWS | Mục đích / Vai trò | Lý do lựa chọn |
 |---|---|---|
