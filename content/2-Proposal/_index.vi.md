@@ -25,7 +25,7 @@ Sử dụng mã QR tĩnh để điểm danh thì dễ bị sinh viên chụp ả
 Hệ thống được thiết kế theo mô hình **Serverless 100%**, tận dụng tối đa các dịch vụ managed của AWS:
 
 ![Sơ đồ kiến trúc giải pháp](/images/2-Proposal/solution_architect.jpg)
-
+<!-- 123 -->
 | Dịch vụ AWS | Mục đích / Vai trò | Lý do lựa chọn |
 |---|---|---|
 | **Amazon Cognito** | Quản lý danh tính người dùng (Xác thực & Phân quyền Admin, Teacher, Student) | Tiện lợi, có sẵn giao diện đăng nhập, an toàn |
