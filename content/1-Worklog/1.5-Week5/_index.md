@@ -30,3 +30,4 @@ pre: " <b> 1.5. </b> "
 * Acquired the ability to managed database in AWS Console.
 
 * Explored Jira integration and AWS FinOps Agent.
+ https://aws.amazon.com/blogs/machine-learning/create-rich-custom-tooltips-in-amazon-quick-sight/ https://aws.amazon.com/quick/quicksight/ https://docs.aws.amazon.com/quicksight/latest/developerguide/embedded-analytics-getting-started.html https://docs.aws.amazon.com/quicksight/latest/developerguide/resource-errors.html https://aws.amazon.com/documentation-overview/quicksight/ https://aws.amazon.com/quick/quicksight/features/pixel-perfect-reports/ https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateDataSource.html https://aws.amazon.com/quicksuite/quicksight/embedded-analytics/|

@@ -20,8 +20,13 @@ pre: " <b> 1.4. </b> "
  | 4   | Explore Amazon Q Business   | 23/06/2026 | 23/06/2026      |https://aws.amazon.com/q/business/getting-started/ |
  |5|Using Q artifacts in Amazon Q|23/06/2026 | 23/06/2026      |https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/chat-artifacts.html|
  |6|Learn Amazon Q Developer with Rules|23/06/2026 | 23/06/2026      | https://aws.amazon.com/blogs/devops/mastering-amazon-q-developer-with-rules/|
-| 7   | - Explore Amazon Quick Sight. <br> - **Practice:**     | 24/06/2026 | 27/06/2026      |https://docs.aws.amazon.com/quicksight/latest/APIReference/Welcome.html https://aws.amazon.com/quick/quicksight/features/data-preparation/ https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisteredUserDashboardFeatureConfigurations.html https://aws.amazon.com/blogs/machine-learning/create-rich-custom-tooltips-in-amazon-quick-sight/ https://aws.amazon.com/quick/quicksight/ https://docs.aws.amazon.com/quicksight/latest/developerguide/embedded-analytics-getting-started.html https://docs.aws.amazon.com/quicksight/latest/developerguide/resource-errors.html https://aws.amazon.com/documentation-overview/quicksight/ https://aws.amazon.com/quick/quicksight/features/pixel-perfect-reports/ https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateDataSource.html https://aws.amazon.com/quicksuite/quicksight/embedded-analytics/|
-| 8   | - Test backend. | 27/06/2026 | 29/06/2026      ||
+| 7   | Explore Amazon Quick Sight.  | 24/06/2026 | 24/06/2026      |https://docs.aws.amazon.com/quicksight/latest/APIReference/Welcome.html|
+| 8   | Explore Quick Sight data preparation and connectivity.  | 24/06/2026 | 24/06/2026      |https://aws.amazon.com/quick/quicksight/features/data-preparation/ |
+| 9   | Learn Amazon Quick Sight in the AWS CLI Reference | 24/06/2026 | 24/06/2026      |Amazon Quick Sight in the AWS CLI Reference|
+| 10   | Learn API Reference | 25/06/2026 | 25/06/2026      |https://docs.aws.amazon.com/quicksight/latest/APIReference/Welcome.html|
+| 11   | Learn Developer Guide for for Amazon Quick Sight| 25/06/2026 | 25/06/2026      |https://docs.aws.amazon.com/quicksight/latest/developerguide/welcome.html|
+| 12  | Learn User Guide for Amazon Quick Sight| 25/06/2026 | 25/06/2026      |https://docs.aws.amazon.com/quick/latest/userguide/what-is.html|
+| 13   | - Test backend. | 27/06/2026 | 29/06/2026      ||
 ### Week 4 Achievements:
 * Learned about FinOps-related tools: Amazon Q and Amazon Quick Sight.
 * Complete backend testing, note areas for further improvement and adjustment.
