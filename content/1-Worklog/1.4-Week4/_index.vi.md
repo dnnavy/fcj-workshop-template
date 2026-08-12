@@ -22,11 +22,10 @@ pre: " <b> 1.4. </b> "
 | 6 | Tìm hiểu Amazon Q Developer với Rules | 23/06/2026 | 23/06/2026      | https://aws.amazon.com/blogs/devops/mastering-amazon-q-developer-with-rules/|
 | 7   | Khám phá Amazon QuickSight.  | 24/06/2026 | 24/06/2026      |https://docs.aws.amazon.com/quicksight/latest/APIReference/Welcome.html https://aws.amazon.com/quick/quicksight/ https://aws.amazon.com/documentation-overview/quicksight/|
 | 8   | Khám phá chuẩn bị dữ liệu và khả năng kết nối của QuickSight.  | 24/06/2026 | 24/06/2026      |https://aws.amazon.com/quick/quicksight/features/data-preparation/ |
-| 9   | Tìm hiểu Amazon QuickSight trong Tài liệu tham khảo AWS CLI | 24/06/2026 | 24/06/2026      |Amazon Quick Sight in the AWS CLI Reference|
-| 10   | Tìm hiểu Tài liệu tham khảo API (API Reference) | 25/06/2026 | 25/06/2026      |https://docs.aws.amazon.com/quicksight/latest/APIReference/Welcome.html|
-| 11   | Tìm hiểu Hướng dẫn nhà phát triển cho Amazon QuickSight | 25/06/2026 | 25/06/2026      |https://docs.aws.amazon.com/quicksight/latest/developerguide/welcome.html|
-| 12  | Tìm hiểu Hướng dẫn người dùng cho Amazon QuickSight | 25/06/2026 | 25/06/2026      |https://docs.aws.amazon.com/quick/latest/userguide/what-is.html|
-| 13   | - Kiểm thử backend. | 27/06/2026 | 29/06/2026      ||
+| 9   | Tìm hiểu Tài liệu tham khảo API (API Reference) | 25/06/2026 | 25/06/2026      |https://docs.aws.amazon.com/quicksight/latest/APIReference/Welcome.html|
+| 10   | Tìm hiểu Hướng dẫn nhà phát triển cho Amazon QuickSight | 25/06/2026 | 25/06/2026      |https://docs.aws.amazon.com/quicksight/latest/developerguide/welcome.html|
+| 11  | Tìm hiểu Hướng dẫn người dùng cho Amazon QuickSight | 25/06/2026 | 25/06/2026      |https://docs.aws.amazon.com/quick/latest/userguide/what-is.html|
+| 12   | - Kiểm thử backend. | 27/06/2026 | 29/06/2026      ||
 ### Kết quả đạt được tuần 4:
 * Học về 1 số công cụ liên quan đến FinOps: Amazon Q và Amazon Quick Sight.
 * Hoàn thành kiểm thử backend, ghi chú lại các phần cần tiếp tục hoàn thiện, chỉnh sửa.
