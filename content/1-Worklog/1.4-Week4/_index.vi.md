@@ -20,7 +20,7 @@ pre: " <b> 1.4. </b> "
 | 4   | Khám phá Amazon Q Business   | 23/06/2026 | 23/06/2026      |https://aws.amazon.com/q/business/getting-started/ |
 | 5 | Sử dụng artifact Q trong Amazon Q | 23/06/2026 | 23/06/2026      |https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/chat-artifacts.html|
 | 6 | Tìm hiểu Amazon Q Developer với Rules | 23/06/2026 | 23/06/2026      | https://aws.amazon.com/blogs/devops/mastering-amazon-q-developer-with-rules/|
-| 7   | Khám phá Amazon QuickSight.  | 24/06/2026 | 24/06/2026      |https://docs.aws.amazon.com/quicksight/latest/APIReference/Welcome.html|
+| 7   | Khám phá Amazon QuickSight.  | 24/06/2026 | 24/06/2026      |https://docs.aws.amazon.com/quicksight/latest/APIReference/Welcome.html https://aws.amazon.com/quick/quicksight/ https://aws.amazon.com/documentation-overview/quicksight/|
 | 8   | Khám phá chuẩn bị dữ liệu và khả năng kết nối của QuickSight.  | 24/06/2026 | 24/06/2026      |https://aws.amazon.com/quick/quicksight/features/data-preparation/ |
 | 9   | Tìm hiểu Amazon QuickSight trong Tài liệu tham khảo AWS CLI | 24/06/2026 | 24/06/2026      |Amazon Quick Sight in the AWS CLI Reference|
 | 10   | Tìm hiểu Tài liệu tham khảo API (API Reference) | 25/06/2026 | 25/06/2026      |https://docs.aws.amazon.com/quicksight/latest/APIReference/Welcome.html|

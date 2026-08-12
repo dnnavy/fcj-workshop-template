@@ -20,7 +20,7 @@ pre: " <b> 1.4. </b> "
  | 4   | Explore Amazon Q Business   | 23/06/2026 | 23/06/2026      |https://aws.amazon.com/q/business/getting-started/ |
  |5|Using Q artifacts in Amazon Q|23/06/2026 | 23/06/2026      |https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/chat-artifacts.html|
  |6|Learn Amazon Q Developer with Rules|23/06/2026 | 23/06/2026      | https://aws.amazon.com/blogs/devops/mastering-amazon-q-developer-with-rules/|
-| 7   | Explore Amazon Quick Sight.  | 24/06/2026 | 24/06/2026      |https://docs.aws.amazon.com/quicksight/latest/APIReference/Welcome.html|
+| 7   | Explore Amazon Quick Sight.  | 24/06/2026 | 24/06/2026      |https://docs.aws.amazon.com/quicksight/latest/APIReference/Welcome.html https://aws.amazon.com/quick/quicksight/ https://aws.amazon.com/documentation-overview/quicksight/|
 | 8   | Explore Quick Sight data preparation and connectivity.  | 24/06/2026 | 24/06/2026      |https://aws.amazon.com/quick/quicksight/features/data-preparation/ |
 | 9   | Learn Amazon Quick Sight in the AWS CLI Reference | 24/06/2026 | 24/06/2026      |Amazon Quick Sight in the AWS CLI Reference|
 | 10   | Learn API Reference | 25/06/2026 | 25/06/2026      |https://docs.aws.amazon.com/quicksight/latest/APIReference/Welcome.html|
